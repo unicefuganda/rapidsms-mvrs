@@ -1,5 +1,3 @@
-from django.db import models
-from ussd.models import Menu,Field
 from ussd.models import ussd_pre_transition
 
 

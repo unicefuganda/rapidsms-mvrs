@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 from ussd.urls import urlpatterns as ussd_urls
-from mobilevrs.views import ussd_menu
+from views import ussd_menu
 #from django.views.generic.simple import direct_to_template
 
 # Uncomment the next two lines to enable the admin:

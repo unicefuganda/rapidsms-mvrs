@@ -1,5 +1,5 @@
 from django.conf import settings
-from mobilevrs.utils import get_summary_dict, get_dictionary_for_session
+from utils import get_summary_dict, get_dictionary_for_session
 import urllib2, urllib
 import logging
 

@@ -6,7 +6,7 @@ from django.template import RequestContext
 import urllib
 from ussd.models import *
 from django.conf import settings
-from mobilevrs.tasks import forward_to_utl
+from tasks import forward_to_utl
 from django.core.cache import cache
 import logging
 
