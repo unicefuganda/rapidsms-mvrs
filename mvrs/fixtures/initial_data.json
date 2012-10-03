@@ -263,7 +263,7 @@
         "model" : "ussd.screen",
         "pk" : "user_gender"
     },
-    { "fields" : { "label" : "Other Names",
+    { "fields" : { "label" : "surname",
         "level" : 0,
         "lft" : 1,
         "order" : 0,
@@ -671,13 +671,13 @@
         "pk" : "user_gender"
     },
     { "fields" : { "next" : "user_gender",
-        "question_text" : "Enter User's other names:"
+        "question_text" : "Enter User's surname:"
     },
         "model" : "ussd.question",
         "pk" : "user_other_name"
     },
     { "fields" : { "next" : "user_other_name",
-        "question_text" : "Enter User's Surname:"
+        "question_text" : "Enter User's name:"
     },
         "model" : "ussd.question",
         "pk" : "user_first_name"
@@ -1187,7 +1187,7 @@
     { "fields" : { "command" : "u7",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter User's other names:",
+        "question" : "Enter User's surname:",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -1196,7 +1196,7 @@
     { "fields" : { "command" : "u8",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter User's Surname:",
+        "question" : "Enter User's name:",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",

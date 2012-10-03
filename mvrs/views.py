@@ -41,9 +41,11 @@ def ussd_menu(req, input_form=YoForm, output_template='ussd/yo.txt'):
         #if we have already progressed to the last screen, the user must have put in a pin or cancelled, lets forward to UTL
         if response_screen.slug in settings.END_SCREENS:
             logger.info('Preparing to submit this data...')
-            response = forward_to_utl(session)
-            if request_string == '0' or response.getcode() != 200:
-                resp = "The information was not recorded. Please start again"
+            if request_string == '0':
+                resp = "The information was not recorded. Please start again."
+                if response_screen.slug in ["delete_thank_you","validate_thank_you","val_thank_you"]:
+                    resp = "Your request was not submitted. Please start again."
+                logger.info("Submission canceled by user... ")
                 logger.info('Sending response to Yo " %s "'%render_to_string(output_template,{
                     'response_content':urllib.quote(str(response_screen)),
                     'action':'end',
@@ -52,6 +54,9 @@ def ussd_menu(req, input_form=YoForm, output_template='ussd/yo.txt'):
                         'response_content':urllib.quote(str(resp)),
                         'action':'end',
                         }, context_instance=RequestContext(req))
+            if not response_screen.slug in ["delete_thank_you","validate_thank_you","val_thank_you"]: #this is a temporaly condition since we don't have some of the traslation dictionary from utl
+                forward_to_utl(session)
+
 
         #is this a terminal screen or not?
         action = 'end' if response_screen.is_terminal() else 'request'
