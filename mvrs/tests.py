@@ -894,3 +894,1003 @@ class ViewTest(TestCase):
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), 'responseString=Your request was not submitted. Please start again.&action=end')
+
+    def testEditChildFirstName(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's details\n2. Mother's details\n3. Father's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's first name\n2. Child's other name\n3. DoB\n4. Child's Sex\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter child\'s first name&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = 'Childa',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Child's first name\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+    def testEditChildOtherName(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's details\n2. Mother's details\n3. Father's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's first name\n2. Child's other name\n3. DoB\n4. Child's Sex\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter child\'s other name&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = 'Childa',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Child's other name\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+
+    def testEditChildDoB(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's details\n2. Mother's details\n3. Father's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's first name\n2. Child's other name\n3. DoB\n4. Child's Sex\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter date of birth:\n1. Today\n2. Yesterday\nOther (Enter manually in the format ddmmyyyy)&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '12112011',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Date of birth\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+    def testEditChildSex(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's details\n2. Mother's details\n3. Father's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's first name\n2. Child's other name\n3. DoB\n4. Child's Sex\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '4',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Child\'s Sex:\n1. Male\n2. Female&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '12112011',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Child's Sex \n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+
+    def testEditMotherName(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's details\n2. Mother's details\n3. Father's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Mother's Names\n2. Mother's Nationality\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter mother\'s names:&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = 'Mama',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Mother\'s names\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+    def testEditMotherNatioanality(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's details\n2. Mother's details\n3. Father's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Mother's Names\n2. Mother's Nationality\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter mother\'s nationality:&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = 'Mama',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Mother\'s nationality\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+    def testEditFatherName(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's details\n2. Mother's details\n3. Father's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Father's Names\n2. Father's Nationality\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter father's names:&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = 'Mama',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change father\'s names\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+    def testEditFatherNationality(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's details\n2. Mother's details\n3. Father's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Father's Names\n2. Father's Nationality\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter father\'s nationality:&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = 'Mama',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Father\'s nationality\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+    def testEditDeceasedName(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's details\n2. Declarant's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's names\n2. Age\n3. Sex\n4. Date of Death\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter name of the deceased&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = 'Mama',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change name of the deceased\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+    def testEditDeceasedAge(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's details\n2. Declarant's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's names\n2. Age\n3. Sex\n4. Date of Death\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Age of the deceased:&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = 'Mama',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Deceased\'s age\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+
+    def testEditDeceasedSex(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's details\n2. Declarant's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's names\n2. Age\n3. Sex\n4. Date of Death\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Sex of the deceased:\n1. Male\n2. Female&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Deceased's Sex\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+
+    def testEditDeceasedDod(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's details\n2. Declarant's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's names\n2. Age\n3. Sex\n4. Date of Death\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '4',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Date of death (ddmmyyyy):&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Deceased's Date of death\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+
+    def testEditDeclarantName(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's details\n2. Declarant's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Names of Declarant\n2. Declarant's Phone Number\n3. Declarant's Capacity\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Names of Declarant:&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Names of Declarant\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+
+    def testEditDeclarantPhone(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's details\n2. Declarant's's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Declarant's names\n2. Declarant's phone number\n3. Declarant's capacity\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Declarant's Phone Number:&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Declarant's phone number\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+
+    def testEditDeclarantPhone(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's details\n2. Declarant's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Names of Declarant\n2. Declarant's Phone Number\n3. Declarant's Capacity\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Declarant's Phone Number:&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Declarant's phone number\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+
+    def testEditDeclarantCapacity(self):
+        logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's details\n2. Declarant's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Names of Declarant\n2. Declarant's Phone Number\n3. Declarant's Capacity\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Capacity:\n1. Relative present at Death\n2. Other Relative\n3. Person present at death\n4. Household member\n5. Person with knowledge of death\n6. Person finding the body&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Declarant\'s Capacity \n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '9045',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")

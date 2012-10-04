@@ -3,3 +3,4 @@
 *.pyc
 local_settings.py
 mvrs/creator.py
+mvrs/fixtures/bkup
