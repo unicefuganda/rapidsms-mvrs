@@ -1,14 +1,14 @@
 [
-    { "fields" : { "label" : "New Phone Number",
+    { "fields" : { "label" : "New Date Pin",
         "level" : 0,
         "lft" : 1,
         "order" : 1,
         "parent" : null,
         "rght" : 2,
-        "tree_id" : 65
+        "tree_id" : 44
     },
         "model" : "ussd.screen",
-        "pk" : "new_phone"
+        "pk" : "new_sex_pin"
     },
     { "fields" : { "label" : "",
         "level" : 0,
@@ -274,6 +274,39 @@
         "model" : "ussd.screen",
         "pk" : "user_other_name"
     },
+    { "fields" : { "label" : "New sex",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 45
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_sex"
+    },
+    { "fields" : { "label" : "New age Pin",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 56
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_age_pin"
+    },
+    { "fields" : { "label" : "New age",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 57
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_age"
+    },
     { "fields" : { "label" : "pin End",
         "level" : 0,
         "lft" : 1,
@@ -395,6 +428,347 @@
         "model" : "ussd.screen",
         "pk" : "del_reenter"
     },
+    { "fields" : { "label" : "Age",
+        "level" : 4,
+        "lft" : 31,
+        "order" : 2,
+        "parent" : "deceased_details",
+        "rght" : 32,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "edit_deceased_age"
+    },
+    { "fields" : { "label" : "Child's details",
+        "level" : 3,
+        "lft" : 4,
+        "order" : 1,
+        "parent" : "edit_birth_record",
+        "rght" : 13,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "child_details"
+    },
+    { "fields" : { "label" : "Child's Sex",
+        "level" : 4,
+        "lft" : 11,
+        "order" : 4,
+        "parent" : "child_details",
+        "rght" : 12,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "sex_edit"
+    },
+    { "fields" : { "label" : "New d_sex Pin",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 58
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_sex_pin_dead"
+    },
+    { "fields" : { "label" : "New sex",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 59
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_sex_dead"
+    },
+    { "fields" : { "label" : "Sex",
+        "level" : 4,
+        "lft" : 33,
+        "order" : 3,
+        "parent" : "deceased_details",
+        "rght" : 34,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "edit_deceased_sex"
+    },
+    { "fields" : { "label" : "New dod Pin",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 60
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_dod_pin"
+    },
+    { "fields" : { "label" : "New Name Pin",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 46
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_name_pin_mother"
+    },
+    { "fields" : { "label" : "New name",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 47
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_name_mother"
+    },
+    { "fields" : { "label" : "New dod",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 61
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_dod"
+    },
+    { "fields" : { "label" : "New Name Pin",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 37
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_name_thank"
+    },
+    { "fields" : { "label" : "New Name Pin",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 38
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_name_pin"
+    },
+    { "fields" : { "label" : "New name",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 39
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_name"
+    },
+    { "fields" : { "label" : "Date of Death",
+        "level" : 4,
+        "lft" : 35,
+        "order" : 4,
+        "parent" : "deceased_details",
+        "rght" : 36,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "edit_dod"
+    },
+    { "fields" : { "label" : "Mother's Names",
+        "level" : 4,
+        "lft" : 15,
+        "order" : 1,
+        "parent" : "mother_details",
+        "rght" : 16,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "edit_mother_names"
+    },
+    { "fields" : { "label" : "New Nationality Pin",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 48
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_nationality_pin_mother"
+    },
+    { "fields" : { "label" : "New nationality",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 49
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_nationality_mother"
+    },
+    { "fields" : { "label" : "Child's Name",
+        "level" : 4,
+        "lft" : 5,
+        "order" : 1,
+        "parent" : "child_details",
+        "rght" : 6,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "edit_child_first_name"
+    },
+    { "fields" : { "label" : "New Other Pin",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 40
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_name_pin_o"
+    },
+    { "fields" : { "label" : "New name",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 41
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_name_o"
+    },
+    { "fields" : { "label" : "New Name Pin",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 62
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_name_pin_declarant"
+    },
+    { "fields" : { "label" : "New name",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 63
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_name_declarant"
+    },
+    { "fields" : { "label" : "Mother's details",
+        "level" : 3,
+        "lft" : 14,
+        "order" : 2,
+        "parent" : "edit_birth_record",
+        "rght" : 19,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "mother_details"
+    },
+    { "fields" : { "label" : "Mother's Nationality",
+        "level" : 4,
+        "lft" : 17,
+        "order" : 2,
+        "parent" : "mother_details",
+        "rght" : 18,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "edit_mother_nationality"
+    },
+    { "fields" : { "label" : "Child's Surname",
+        "level" : 4,
+        "lft" : 7,
+        "order" : 2,
+        "parent" : "child_details",
+        "rght" : 8,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "edit_child_other_name"
+    },
+    { "fields" : { "label" : "New Date Pin",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 42
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_date_pin"
+    },
+    { "fields" : { "label" : "New name",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 43
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_dob"
+    },
+    { "fields" : { "label" : "Names of Declarant",
+        "level" : 4,
+        "lft" : 39,
+        "order" : 1,
+        "parent" : "declarant_details",
+        "rght" : 40,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "edit_declarant_name"
+    },
+    { "fields" : { "label" : "New phone Pin",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 64
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_phone_pin"
+    },
+    { "fields" : { "label" : "New Phone Number",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 65
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_phone"
+    },
+    { "fields" : { "label" : "DoB",
+        "level" : 4,
+        "lft" : 9,
+        "order" : 3,
+        "parent" : "child_details",
+        "rght" : 10,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "dob_edit"
+    },
     { "fields" : { "label" : "Edit Record",
         "level" : 1,
         "lft" : 2,
@@ -405,28 +779,6 @@
     },
         "model" : "ussd.screen",
         "pk" : "edit_record"
-    },
-    { "fields" : { "label" : "New Name Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 50
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_name_pin_father"
-    },
-    { "fields" : { "label" : "New name",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 51
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_name_father"
     },
     { "fields" : { "label" : "Notify Birth",
         "level" : 1,
@@ -483,6 +835,28 @@
         "model" : "ussd.screen",
         "pk" : "user_management"
     },
+    { "fields" : { "label" : "New Name Pin",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 50
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_name_pin_father"
+    },
+    { "fields" : { "label" : "New name",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 51
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_name_father"
+    },
     { "fields" : { "label" : "Resume Previous",
         "level" : 1,
         "lft" : 58,
@@ -516,17 +890,6 @@
         "model" : "ussd.screen",
         "pk" : "validate_record"
     },
-    { "fields" : { "label" : "Validation",
-        "level" : 1,
-        "lft" : 60,
-        "order" : 4,
-        "parent" : "ussd_root",
-        "rght" : 67,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "validation"
-    },
     { "fields" : { "label" : "Root Menu",
         "level" : 0,
         "lft" : 1,
@@ -537,6 +900,17 @@
     },
         "model" : "ussd.screen",
         "pk" : "ussd_root"
+    },
+    { "fields" : { "label" : "Edit Birth Record",
+        "level" : 2,
+        "lft" : 3,
+        "order" : 1,
+        "parent" : "edit_record",
+        "rght" : 26,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "edit_birth_record"
     },
     { "fields" : { "label" : "Father's Names",
         "level" : 4,
@@ -571,50 +945,6 @@
         "model" : "ussd.screen",
         "pk" : "new_nationality_father"
     },
-    { "fields" : { "label" : "Edit Birth Record",
-        "level" : 2,
-        "lft" : 3,
-        "order" : 1,
-        "parent" : "edit_record",
-        "rght" : 26,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "edit_birth_record"
-    },
-    { "fields" : { "label" : "New Name Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 37
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_name_thank"
-    },
-    { "fields" : { "label" : "New Name Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 38
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_name_pin"
-    },
-    { "fields" : { "label" : "New name",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 39
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_name"
-    },
     { "fields" : { "label" : "Father's details",
         "level" : 3,
         "lft" : 20,
@@ -637,71 +967,16 @@
         "model" : "ussd.screen",
         "pk" : "edit_father_nationality"
     },
-    { "fields" : { "label" : "Child's first name",
-        "level" : 4,
-        "lft" : 5,
+    { "fields" : { "label" : "Deceased's details",
+        "level" : 3,
+        "lft" : 28,
         "order" : 1,
-        "parent" : "child_details",
-        "rght" : 6,
+        "parent" : "edit_death_record",
+        "rght" : 37,
         "tree_id" : 1
     },
         "model" : "ussd.screen",
-        "pk" : "edit_child_first_name"
-    },
-    { "fields" : { "label" : "New Other Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 40
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_name_pin_o"
-    },
-    { "fields" : { "label" : "New name",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 41
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_name_o"
-    },
-    { "fields" : { "label" : "Child's other name",
-        "level" : 4,
-        "lft" : 7,
-        "order" : 2,
-        "parent" : "child_details",
-        "rght" : 8,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "edit_child_other_name"
-    },
-    { "fields" : { "label" : "New Date Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 42
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_date_pin"
-    },
-    { "fields" : { "label" : "New name",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 43
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_dob"
+        "pk" : "deceased_details"
     },
     { "fields" : { "label" : "New deceased Pin",
         "level" : 0,
@@ -725,39 +1000,6 @@
         "model" : "ussd.screen",
         "pk" : "new_deceased_name"
     },
-    { "fields" : { "label" : "DoB",
-        "level" : 4,
-        "lft" : 9,
-        "order" : 3,
-        "parent" : "child_details",
-        "rght" : 10,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "dob_edit"
-    },
-    { "fields" : { "label" : "New Date Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 44
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_sex_pin"
-    },
-    { "fields" : { "label" : "New sex",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 45
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_sex"
-    },
     { "fields" : { "label" : "Deceased's names",
         "level" : 4,
         "lft" : 29,
@@ -768,138 +1010,6 @@
     },
         "model" : "ussd.screen",
         "pk" : "edit_deceased_name"
-    },
-    { "fields" : { "label" : "New age Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 56
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_age_pin"
-    },
-    { "fields" : { "label" : "New age",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 57
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_age"
-    },
-    { "fields" : { "label" : "Child's details",
-        "level" : 3,
-        "lft" : 4,
-        "order" : 1,
-        "parent" : "edit_birth_record",
-        "rght" : 13,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "child_details"
-    },
-    { "fields" : { "label" : "Child's Sex",
-        "level" : 4,
-        "lft" : 11,
-        "order" : 4,
-        "parent" : "child_details",
-        "rght" : 12,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "sex_edit"
-    },
-    { "fields" : { "label" : "New Name Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 46
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_name_pin_mother"
-    },
-    { "fields" : { "label" : "New name",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 47
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_name_mother"
-    },
-    { "fields" : { "label" : "Mother's Names",
-        "level" : 4,
-        "lft" : 15,
-        "order" : 1,
-        "parent" : "mother_details",
-        "rght" : 16,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "edit_mother_names"
-    },
-    { "fields" : { "label" : "New Nationality Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 48
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_nationality_pin_mother"
-    },
-    { "fields" : { "label" : "New nationality",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 49
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_nationality_mother"
-    },
-    { "fields" : { "label" : "Deceased's details",
-        "level" : 3,
-        "lft" : 28,
-        "order" : 1,
-        "parent" : "edit_death_record",
-        "rght" : 37,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "deceased_details"
-    },
-    { "fields" : { "label" : "Mother's details",
-        "level" : 3,
-        "lft" : 14,
-        "order" : 2,
-        "parent" : "edit_birth_record",
-        "rght" : 19,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "mother_details"
-    },
-    { "fields" : { "label" : "Mother's Nationality",
-        "level" : 4,
-        "lft" : 17,
-        "order" : 2,
-        "parent" : "mother_details",
-        "rght" : 18,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "edit_mother_nationality"
     },
     { "fields" : { "label" : "Declarant's Phone Number",
         "level" : 4,
@@ -934,16 +1044,27 @@
         "model" : "ussd.screen",
         "pk" : "new_capacity"
     },
-    { "fields" : { "label" : "Edit Death Record",
-        "level" : 2,
-        "lft" : 27,
+    { "fields" : { "label" : "Declarant's details",
+        "level" : 3,
+        "lft" : 38,
         "order" : 2,
-        "parent" : "edit_record",
-        "rght" : 46,
+        "parent" : "edit_death_record",
+        "rght" : 45,
         "tree_id" : 1
     },
         "model" : "ussd.screen",
-        "pk" : "edit_death_record"
+        "pk" : "declarant_details"
+    },
+    { "fields" : { "label" : "Validation",
+        "level" : 1,
+        "lft" : 60,
+        "order" : 4,
+        "parent" : "ussd_root",
+        "rght" : 67,
+        "tree_id" : 1
+    },
+        "model" : "ussd.screen",
+        "pk" : "validation"
     },
     { "fields" : { "label" : "Delete",
         "level" : 2,
@@ -956,82 +1077,16 @@
         "model" : "ussd.screen",
         "pk" : "delete_record"
     },
-    { "fields" : { "label" : "Age",
-        "level" : 4,
-        "lft" : 31,
+    { "fields" : { "label" : "Edit Death Record",
+        "level" : 2,
+        "lft" : 27,
         "order" : 2,
-        "parent" : "deceased_details",
-        "rght" : 32,
+        "parent" : "edit_record",
+        "rght" : 46,
         "tree_id" : 1
     },
         "model" : "ussd.screen",
-        "pk" : "edit_deceased_age"
-    },
-    { "fields" : { "label" : "New d_sex Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 58
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_sex_pin_dead"
-    },
-    { "fields" : { "label" : "New sex",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 59
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_sex_dead"
-    },
-    { "fields" : { "label" : "Declarant's details",
-        "level" : 3,
-        "lft" : 38,
-        "order" : 2,
-        "parent" : "edit_death_record",
-        "rght" : 45,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "declarant_details"
-    },
-    { "fields" : { "label" : "Sex",
-        "level" : 4,
-        "lft" : 33,
-        "order" : 3,
-        "parent" : "deceased_details",
-        "rght" : 34,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "edit_deceased_sex"
-    },
-    { "fields" : { "label" : "New dod Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 60
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_dod_pin"
-    },
-    { "fields" : { "label" : "New dod",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 61
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_dod"
+        "pk" : "edit_death_record"
     },
     { "fields" : { "label" : "Declarant's Capacity",
         "level" : 4,
@@ -1043,61 +1098,6 @@
     },
         "model" : "ussd.screen",
         "pk" : "edit_capacity"
-    },
-    { "fields" : { "label" : "Date of Death",
-        "level" : 4,
-        "lft" : 35,
-        "order" : 4,
-        "parent" : "deceased_details",
-        "rght" : 36,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "edit_dod"
-    },
-    { "fields" : { "label" : "New Name Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 62
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_name_pin_declarant"
-    },
-    { "fields" : { "label" : "New name",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 63
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_name_declarant"
-    },
-    { "fields" : { "label" : "Names of Declarant",
-        "level" : 4,
-        "lft" : 39,
-        "order" : 1,
-        "parent" : "declarant_details",
-        "rght" : 40,
-        "tree_id" : 1
-    },
-        "model" : "ussd.screen",
-        "pk" : "edit_declarant_name"
-    },
-    { "fields" : { "label" : "New phone Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 64
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_phone_pin"
     },
     { "fields" : {  },
         "model" : "ussd.menu",
@@ -1186,7 +1186,7 @@
         "pk" : "birth_date"
     },
     { "fields" : { "next" : "birth_date",
-        "question_text" : "Enter child's other name(s):"
+        "question_text" : "Enter child's Surname:"
     },
         "model" : "ussd.question",
         "pk" : "other_name"
@@ -1234,7 +1234,7 @@
         "pk" : "death_age"
     },
     { "fields" : { "next" : "other_name",
-        "question_text" : "Enter Child's first name :"
+        "question_text" : "Enter Child's Name :"
     },
         "model" : "ussd.question",
         "pk" : "child_first_name"
@@ -1390,13 +1390,13 @@
         "pk" : "new_name_thank"
     },
     { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change Child's first name\n\nEnter  PIN to confirm or \"0\" to cancel"
+        "question_text" : "Change Child's Name\n\nEnter  PIN to confirm or \"0\" to cancel"
     },
         "model" : "ussd.question",
         "pk" : "new_name_pin"
     },
     { "fields" : { "next" : "new_name_pin",
-        "question_text" : "Enter child's first name"
+        "question_text" : "Enter child's Name"
     },
         "model" : "ussd.question",
         "pk" : "new_name"
@@ -1408,13 +1408,13 @@
         "pk" : "edit_child_first_name"
     },
     { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change Child's other name\n\nEnter  PIN to confirm or \"0\" to cancel"
+        "question_text" : "Change Child's Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
     },
         "model" : "ussd.question",
         "pk" : "new_name_pin_o"
     },
     { "fields" : { "next" : "new_name_pin_o",
-        "question_text" : "Enter child's other name"
+        "question_text" : "Enter child's Surname"
     },
         "model" : "ussd.question",
         "pk" : "new_name_o"
@@ -1462,13 +1462,13 @@
         "pk" : "sex_edit"
     },
     { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change Mother's names\n\nEnter  PIN to confirm or \"0\" to cancel"
+        "question_text" : "Change Mother's Names and Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
     },
         "model" : "ussd.question",
         "pk" : "new_name_pin_mother"
     },
     { "fields" : { "next" : "new_name_pin_mother",
-        "question_text" : "Enter mother's names:"
+        "question_text" : "Enter mother's Names and Surname:"
     },
         "model" : "ussd.question",
         "pk" : "new_name_mother"
@@ -1486,7 +1486,7 @@
         "pk" : "new_nationality_pin_mother"
     },
     { "fields" : { "next" : "new_nationality_pin_mother",
-        "question_text" : "Enter mother's nationality:"
+        "question_text" : "Enter mother's nationality:\n1. Uganda\n2. Kenya\n3. Tanzania\n4. Rwanda\n5. Burundi\n6. South Sudan\n7. DR Congo\nOthers (Type in the country manually)"
     },
         "model" : "ussd.question",
         "pk" : "new_nationality_mother"
@@ -1498,13 +1498,13 @@
         "pk" : "edit_mother_nationality"
     },
     { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change father's names\n\nEnter  PIN to confirm or \"0\" to cancel"
+        "question_text" : "Change father's Names and Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
     },
         "model" : "ussd.question",
         "pk" : "new_name_pin_father"
     },
     { "fields" : { "next" : "new_name_pin_father",
-        "question_text" : "Enter father's names:"
+        "question_text" : "Enter father's Name and Surname:"
     },
         "model" : "ussd.question",
         "pk" : "new_name_father"
@@ -1534,13 +1534,13 @@
         "pk" : "edit_father_nationality"
     },
     { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change name of the deceased\n\nEnter  PIN to confirm or \"0\" to cancel"
+        "question_text" : "Change deceased's Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
     },
         "model" : "ussd.question",
         "pk" : "new_deceased_pin"
     },
     { "fields" : { "next" : "new_deceased_pin",
-        "question_text" : "Enter name of the deceased"
+        "question_text" : "Enter deceased's Name and Surname"
     },
         "model" : "ussd.question",
         "pk" : "new_deceased_name"
@@ -1606,13 +1606,13 @@
         "pk" : "edit_dod"
     },
     { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change Names of Declarant\n\nEnter  PIN to confirm or \"0\" to cancel"
+        "question_text" : "Change declarant's Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
     },
         "model" : "ussd.question",
         "pk" : "new_name_pin_declarant"
     },
     { "fields" : { "next" : "new_name_pin_declarant",
-        "question_text" : "Names of Declarant:"
+        "question_text" : "declarant's Name and Surname:"
     },
         "model" : "ussd.question",
         "pk" : "new_name_declarant"
@@ -2042,7 +2042,7 @@
     { "fields" : { "command" : "e15",
         "field_type" : "text",
         "order" : 0,
-        "question" : "Enter Child's first name :",
+        "question" : "Enter Child's Name :",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2114,7 +2114,7 @@
     { "fields" : { "command" : "e7",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter child's other name(s):",
+        "question" : "Enter child's Surname:",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2420,7 +2420,7 @@
     { "fields" : { "command" : "ed3",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Change Child's first name\n\nEnter  PIN to confirm or \"0\" to cancel",
+        "question" : "Change Child's Name\n\nEnter  PIN to confirm or \"0\" to cancel",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2429,7 +2429,7 @@
     { "fields" : { "command" : "ed2",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter child's first name",
+        "question" : "Enter child's Name",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2447,7 +2447,7 @@
     { "fields" : { "command" : "edo3",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Change Child's other name\n\nEnter  PIN to confirm or \"0\" to cancel",
+        "question" : "Change Child's Surname\n\nEnter  PIN to confirm or \"0\" to cancel",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2456,7 +2456,7 @@
     { "fields" : { "command" : "edo2",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter child's other name",
+        "question" : "Enter child's Surname",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2501,7 +2501,7 @@
     { "fields" : { "command" : "edm3",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Change Mother's names\n\nEnter  PIN to confirm or \"0\" to cancel",
+        "question" : "Change Mother's Names and Surname\n\nEnter  PIN to confirm or \"0\" to cancel",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2510,7 +2510,7 @@
     { "fields" : { "command" : "edm2",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter mother's names:",
+        "question" : "Enter mother's Names and Surname:",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2528,7 +2528,7 @@
     { "fields" : { "command" : "edmn2",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter mother's nationality:",
+        "question" : "Enter mother's nationality:\n1. Uganda\n2. Kenya\n3. Tanzania\n4. Rwanda\n5. Burundi\n6. South Sudan\n7. DR Congo\nOthers (Type in the country manually)",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2537,7 +2537,7 @@
     { "fields" : { "command" : "edf3",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Change father's names\n\nEnter  PIN to confirm or \"0\" to cancel",
+        "question" : "Change father's Names and Surname\n\nEnter  PIN to confirm or \"0\" to cancel",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2546,7 +2546,7 @@
     { "fields" : { "command" : "edf2",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter father's names:",
+        "question" : "Enter father's Name and Surname:",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2573,7 +2573,7 @@
     { "fields" : { "command" : "dd3",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Change name of the deceased\n\nEnter  PIN to confirm or \"0\" to cancel",
+        "question" : "Change deceased's Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2582,7 +2582,7 @@
     { "fields" : { "command" : "dd2",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter name of the deceased",
+        "question" : "Enter deceased's Name and Surname",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2645,7 +2645,7 @@
     { "fields" : { "command" : "edf31",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Change Names of Declarant\n\nEnter  PIN to confirm or \"0\" to cancel",
+        "question" : "Change declarant's Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2654,7 +2654,7 @@
     { "fields" : { "command" : "edf21",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Names of Declarant:",
+        "question" : "declarant's Name and Surname:",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2934,11 +2934,11 @@
         "model" : "eav.attribute",
         "pk" : 24
     },
-    { "fields" : { "created" : "2012-10-04 06:18:35",
+    { "fields" : { "created" : "2012-10-05 03:55:49",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:18:35",
+        "modified" : "2012-10-05 03:55:49",
         "name" : "edit_child_first_name",
         "required" : false,
         "site" : 1,
@@ -3074,11 +3074,11 @@
         "model" : "eav.attribute",
         "pk" : 8
     },
-    { "fields" : { "created" : "2012-10-04 06:21:43",
+    { "fields" : { "created" : "2012-10-05 03:58:22",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:21:43",
+        "modified" : "2012-10-05 03:58:22",
         "name" : "new_age",
         "required" : false,
         "site" : 1,
@@ -3088,11 +3088,11 @@
         "model" : "eav.attribute",
         "pk" : 67
     },
-    { "fields" : { "created" : "2012-10-04 06:21:43",
+    { "fields" : { "created" : "2012-10-05 03:58:22",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:21:43",
+        "modified" : "2012-10-05 03:58:22",
         "name" : "new_age_pin",
         "required" : false,
         "site" : 1,
@@ -3102,11 +3102,11 @@
         "model" : "eav.attribute",
         "pk" : 66
     },
-    { "fields" : { "created" : "2012-10-04 06:22:20",
+    { "fields" : { "created" : "2012-10-05 03:58:59",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:22:20",
+        "modified" : "2012-10-05 03:58:59",
         "name" : "new_capacity",
         "required" : false,
         "site" : 1,
@@ -3116,11 +3116,11 @@
         "model" : "eav.attribute",
         "pk" : 77
     },
-    { "fields" : { "created" : "2012-10-04 06:22:20",
+    { "fields" : { "created" : "2012-10-05 03:58:59",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:22:20",
+        "modified" : "2012-10-05 03:58:59",
         "name" : "new_capacity_pin",
         "required" : false,
         "site" : 1,
@@ -3130,11 +3130,11 @@
         "model" : "eav.attribute",
         "pk" : 76
     },
-    { "fields" : { "created" : "2012-10-04 06:19:23",
+    { "fields" : { "created" : "2012-10-05 03:57:14",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:19:23",
+        "modified" : "2012-10-05 03:57:14",
         "name" : "new_date_pin",
         "required" : false,
         "site" : 1,
@@ -3144,11 +3144,11 @@
         "model" : "eav.attribute",
         "pk" : 52
     },
-    { "fields" : { "created" : "2012-10-04 06:21:22",
+    { "fields" : { "created" : "2012-10-05 03:58:14",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:21:22",
+        "modified" : "2012-10-05 03:58:15",
         "name" : "new_deceased_name",
         "required" : false,
         "site" : 1,
@@ -3158,11 +3158,11 @@
         "model" : "eav.attribute",
         "pk" : 65
     },
-    { "fields" : { "created" : "2012-10-04 06:21:22",
+    { "fields" : { "created" : "2012-10-05 03:58:14",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:21:22",
+        "modified" : "2012-10-05 03:58:14",
         "name" : "new_deceased_pin",
         "required" : false,
         "site" : 1,
@@ -3172,11 +3172,11 @@
         "model" : "eav.attribute",
         "pk" : 64
     },
-    { "fields" : { "created" : "2012-10-04 06:19:24",
+    { "fields" : { "created" : "2012-10-05 03:57:15",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:19:24",
+        "modified" : "2012-10-05 03:57:15",
         "name" : "new_dob",
         "required" : false,
         "site" : 1,
@@ -3186,11 +3186,11 @@
         "model" : "eav.attribute",
         "pk" : 53
     },
-    { "fields" : { "created" : "2012-10-04 06:21:58",
+    { "fields" : { "created" : "2012-10-05 03:58:34",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:21:58",
+        "modified" : "2012-10-05 03:58:34",
         "name" : "new_dod",
         "required" : false,
         "site" : 1,
@@ -3200,11 +3200,11 @@
         "model" : "eav.attribute",
         "pk" : 71
     },
-    { "fields" : { "created" : "2012-10-04 06:21:58",
+    { "fields" : { "created" : "2012-10-05 03:58:34",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:21:58",
+        "modified" : "2012-10-05 03:58:34",
         "name" : "new_dod_pin",
         "required" : false,
         "site" : 1,
@@ -3214,11 +3214,11 @@
         "model" : "eav.attribute",
         "pk" : 70
     },
-    { "fields" : { "created" : "2012-10-04 06:18:34",
+    { "fields" : { "created" : "2012-10-05 03:55:49",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:18:34",
+        "modified" : "2012-10-05 03:55:49",
         "name" : "new_name",
         "required" : false,
         "site" : 1,
@@ -3228,11 +3228,11 @@
         "model" : "eav.attribute",
         "pk" : 48
     },
-    { "fields" : { "created" : "2012-10-04 06:22:08",
+    { "fields" : { "created" : "2012-10-05 03:58:46",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:22:08",
+        "modified" : "2012-10-05 03:58:46",
         "name" : "new_name_declarant",
         "required" : false,
         "site" : 1,
@@ -3242,11 +3242,11 @@
         "model" : "eav.attribute",
         "pk" : 73
     },
-    { "fields" : { "created" : "2012-10-04 06:20:40",
+    { "fields" : { "created" : "2012-10-05 03:57:54",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:20:40",
+        "modified" : "2012-10-05 03:57:54",
         "name" : "new_name_father",
         "required" : false,
         "site" : 1,
@@ -3256,11 +3256,11 @@
         "model" : "eav.attribute",
         "pk" : 61
     },
-    { "fields" : { "created" : "2012-10-04 06:19:56",
+    { "fields" : { "created" : "2012-10-05 03:57:39",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:19:56",
+        "modified" : "2012-10-05 03:57:39",
         "name" : "new_name_mother",
         "required" : false,
         "site" : 1,
@@ -3270,11 +3270,11 @@
         "model" : "eav.attribute",
         "pk" : 57
     },
-    { "fields" : { "created" : "2012-10-04 06:19:09",
+    { "fields" : { "created" : "2012-10-05 03:56:00",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:19:09",
+        "modified" : "2012-10-05 03:56:00",
         "name" : "new_name_o",
         "required" : false,
         "site" : 1,
@@ -3284,11 +3284,11 @@
         "model" : "eav.attribute",
         "pk" : 51
     },
-    { "fields" : { "created" : "2012-10-04 06:18:34",
+    { "fields" : { "created" : "2012-10-05 03:55:49",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:18:34",
+        "modified" : "2012-10-05 03:55:49",
         "name" : "new_name_pin",
         "required" : false,
         "site" : 1,
@@ -3298,11 +3298,11 @@
         "model" : "eav.attribute",
         "pk" : 47
     },
-    { "fields" : { "created" : "2012-10-04 06:22:08",
+    { "fields" : { "created" : "2012-10-05 03:58:45",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:22:08",
+        "modified" : "2012-10-05 03:58:45",
         "name" : "new_name_pin_declarant",
         "required" : false,
         "site" : 1,
@@ -3312,11 +3312,11 @@
         "model" : "eav.attribute",
         "pk" : 72
     },
-    { "fields" : { "created" : "2012-10-04 06:20:40",
+    { "fields" : { "created" : "2012-10-05 03:57:54",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:20:40",
+        "modified" : "2012-10-05 03:57:54",
         "name" : "new_name_pin_father",
         "required" : false,
         "site" : 1,
@@ -3326,11 +3326,11 @@
         "model" : "eav.attribute",
         "pk" : 60
     },
-    { "fields" : { "created" : "2012-10-04 06:19:56",
+    { "fields" : { "created" : "2012-10-05 03:57:39",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:19:56",
+        "modified" : "2012-10-05 03:57:39",
         "name" : "new_name_pin_mother",
         "required" : false,
         "site" : 1,
@@ -3340,11 +3340,11 @@
         "model" : "eav.attribute",
         "pk" : 56
     },
-    { "fields" : { "created" : "2012-10-04 06:19:08",
+    { "fields" : { "created" : "2012-10-05 03:56:00",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:19:08",
+        "modified" : "2012-10-05 03:56:00",
         "name" : "new_name_pin_o",
         "required" : false,
         "site" : 1,
@@ -3354,11 +3354,11 @@
         "model" : "eav.attribute",
         "pk" : 50
     },
-    { "fields" : { "created" : "2012-10-04 06:18:34",
+    { "fields" : { "created" : "2012-10-05 03:55:49",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:18:34",
+        "modified" : "2012-10-05 03:55:49",
         "name" : "new_name_thank",
         "required" : false,
         "site" : 1,
@@ -3368,11 +3368,11 @@
         "model" : "eav.attribute",
         "pk" : 46
     },
-    { "fields" : { "created" : "2012-10-04 06:20:52",
+    { "fields" : { "created" : "2012-10-05 03:58:00",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:20:52",
+        "modified" : "2012-10-05 03:58:00",
         "name" : "new_nationality_father",
         "required" : false,
         "site" : 1,
@@ -3382,11 +3382,11 @@
         "model" : "eav.attribute",
         "pk" : 63
     },
-    { "fields" : { "created" : "2012-10-04 06:20:13",
+    { "fields" : { "created" : "2012-10-05 03:57:43",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:20:13",
+        "modified" : "2012-10-05 03:57:43",
         "name" : "new_nationality_mother",
         "required" : false,
         "site" : 1,
@@ -3396,11 +3396,11 @@
         "model" : "eav.attribute",
         "pk" : 59
     },
-    { "fields" : { "created" : "2012-10-04 06:20:52",
+    { "fields" : { "created" : "2012-10-05 03:58:00",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:20:52",
+        "modified" : "2012-10-05 03:58:00",
         "name" : "new_nationality_pin_father",
         "required" : false,
         "site" : 1,
@@ -3410,11 +3410,11 @@
         "model" : "eav.attribute",
         "pk" : 62
     },
-    { "fields" : { "created" : "2012-10-04 06:20:12",
+    { "fields" : { "created" : "2012-10-05 03:57:43",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:20:12",
+        "modified" : "2012-10-05 03:57:43",
         "name" : "new_nationality_pin_mother",
         "required" : false,
         "site" : 1,
@@ -3424,11 +3424,11 @@
         "model" : "eav.attribute",
         "pk" : 58
     },
-    { "fields" : { "created" : "2012-10-04 06:22:13",
+    { "fields" : { "created" : "2012-10-05 03:58:52",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:22:13",
+        "modified" : "2012-10-05 03:58:52",
         "name" : "new_phone",
         "required" : false,
         "site" : 1,
@@ -3438,11 +3438,11 @@
         "model" : "eav.attribute",
         "pk" : 75
     },
-    { "fields" : { "created" : "2012-10-04 06:22:13",
+    { "fields" : { "created" : "2012-10-05 03:58:52",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:22:13",
+        "modified" : "2012-10-05 03:58:52",
         "name" : "new_phone_pin",
         "required" : false,
         "site" : 1,
@@ -3480,11 +3480,11 @@
         "model" : "eav.attribute",
         "pk" : 32
     },
-    { "fields" : { "created" : "2012-10-04 06:19:41",
+    { "fields" : { "created" : "2012-10-05 03:57:25",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:19:41",
+        "modified" : "2012-10-05 03:57:25",
         "name" : "new_sex",
         "required" : false,
         "site" : 1,
@@ -3494,11 +3494,11 @@
         "model" : "eav.attribute",
         "pk" : 55
     },
-    { "fields" : { "created" : "2012-10-04 06:21:51",
+    { "fields" : { "created" : "2012-10-05 03:58:29",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:21:51",
+        "modified" : "2012-10-05 03:58:29",
         "name" : "new_sex_dead",
         "required" : false,
         "site" : 1,
@@ -3508,11 +3508,11 @@
         "model" : "eav.attribute",
         "pk" : 69
     },
-    { "fields" : { "created" : "2012-10-04 06:19:41",
+    { "fields" : { "created" : "2012-10-05 03:57:25",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:19:41",
+        "modified" : "2012-10-05 03:57:25",
         "name" : "new_sex_pin",
         "required" : false,
         "site" : 1,
@@ -3522,11 +3522,11 @@
         "model" : "eav.attribute",
         "pk" : 54
     },
-    { "fields" : { "created" : "2012-10-04 06:21:51",
+    { "fields" : { "created" : "2012-10-05 03:58:29",
         "datatype" : "text",
         "description" : null,
         "enum_group" : null,
-        "modified" : "2012-10-04 06:21:51",
+        "modified" : "2012-10-05 03:58:29",
         "name" : "new_sex_pin_dead",
         "required" : false,
         "site" : 1,
@@ -3774,6 +3774,7 @@
         "model" : "eav.attribute",
         "pk" : 37
     },
+
     { "fields" : { "date_joined" : "2012-09-26 07:28:38",
         "email" : "",
         "first_name" : "",

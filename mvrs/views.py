@@ -45,6 +45,8 @@ def ussd_menu(req, input_form=YoForm, output_template='ussd/yo.txt'):
                 resp = "The information was not recorded. Please start again."
                 if response_screen.slug in ["delete_thank_you","validate_thank_you","val_thank_you"]:
                     resp = "Your request was not submitted. Please start again."
+                elif response_screen.slug == "new_name_thank":
+                    resp = "The information was not updated. Please start again."
                 logger.info("Submission canceled by user... ")
                 logger.info('Sending response to Yo " %s "'%render_to_string(output_template,{
                     'response_content':urllib.quote(str(response_screen)),

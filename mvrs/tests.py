@@ -74,7 +74,7 @@ class ViewTest(TestCase):
                                     ussdRequestString = '1', \
                                     response = True\
                                     )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Child's first name :&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Child's Name :&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
                                     transactionTime = self.transactionTime, \
                                     msisdn = self.msisdn, \
@@ -82,7 +82,7 @@ class ViewTest(TestCase):
                                     ussdRequestString = 'my first guy', \
                                     response = True\
                                     )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's other name(s):&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's Surname:&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
                                     transactionTime = self.transactionTime, \
                                     msisdn = self.msisdn, \
@@ -160,7 +160,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Child's first name :&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Child's Name :&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -168,7 +168,7 @@ class ViewTest(TestCase):
             ussdRequestString = 'my first guy',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's other name(s):&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's Surname:&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -246,7 +246,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Child's first name :&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Child's Name :&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -254,7 +254,7 @@ class ViewTest(TestCase):
             ussdRequestString = 'my first guy',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's other name(s):&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's Surname:&action=request")
         response = self.sendRequest(transactionId = '34455',\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -270,7 +270,7 @@ class ViewTest(TestCase):
             ussdRequestString = '6',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's other name(s):&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's Surname:&action=request")
 
     def testDeathNotify(self):
         logger.info("\n\nTesting Death Notify\n\n")
@@ -923,7 +923,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's first name\n2. Child's other name\n3. DoB\n4. Child's Sex\n#. Back&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's Name\n2. Child's Surname\n3. DoB\n4. Child's Sex\n#. Back&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -939,7 +939,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1231',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter child\'s first name&action=request')
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's Name&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -947,7 +947,7 @@ class ViewTest(TestCase):
             ussdRequestString = 'Childa',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Child's first name\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Child\'s Name\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -985,7 +985,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's first name\n2. Child's other name\n3. DoB\n4. Child's Sex\n#. Back&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's Name\n2. Child's Surname\n3. DoB\n4. Child's Sex\n#. Back&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1001,7 +1001,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1231',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter child\'s other name&action=request')
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's Surname&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1009,7 +1009,7 @@ class ViewTest(TestCase):
             ussdRequestString = 'Childa',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Child's other name\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Child\'s Surname\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1048,7 +1048,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's first name\n2. Child's other name\n3. DoB\n4. Child's Sex\n#. Back&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's Name\n2. Child's Surname\n3. DoB\n4. Child's Sex\n#. Back&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1110,7 +1110,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's first name\n2. Child's other name\n3. DoB\n4. Child's Sex\n#. Back&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Child's Name\n2. Child's Surname\n3. DoB\n4. Child's Sex\n#. Back&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1189,7 +1189,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1231',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter mother\'s names:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter mother's Names and Surname:&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1197,7 +1197,7 @@ class ViewTest(TestCase):
             ussdRequestString = 'Mama',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Mother\'s names\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Mother\'s Names and Surname\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1251,7 +1251,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1231',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter mother\'s nationality:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter mother's nationality:\n1. Uganda\n2. Kenya\n3. Tanzania\n4. Rwanda\n5. Burundi\n6. South Sudan\n7. DR Congo\nOthers (Type in the country manually)&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1313,7 +1313,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1231',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter father's names:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter father's Name and Surname:&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1321,7 +1321,7 @@ class ViewTest(TestCase):
             ussdRequestString = 'Mama',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Change father\'s names\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change father\'s Names and Surname\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1437,7 +1437,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1231',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter name of the deceased&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter deceased's Name and Surname&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1445,7 +1445,7 @@ class ViewTest(TestCase):
             ussdRequestString = 'Mama',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Change name of the deceased\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change deceased\'s Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1688,7 +1688,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1231',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Names of Declarant:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=declarant's Name and Surname:&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1696,70 +1696,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Names of Declarant\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
-        response = self.sendRequest(transactionId = self.transactionId,\
-            transactionTime = self.transactionTime,\
-            msisdn = self.msisdn,\
-            ussdServiceCode = self.msisdn,\
-            ussdRequestString = '9045',\
-            response = True\
-        )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
-
-
-    def testEditDeclarantPhone(self):
-        logger.info("\n\n Testing Edit Child First Name....\n\n")
-        response = self.sendRequest()
-        self.assertEquals(response.status_code, 200)
-        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
-        response = self.sendRequest(transactionId = self.transactionId,\
-            transactionTime = self.transactionTime,\
-            msisdn = self.msisdn,\
-            ussdServiceCode = self.msisdn,\
-            ussdRequestString = '3',\
-            response = True\
-        )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
-        response = self.sendRequest(transactionId = self.transactionId,\
-            transactionTime = self.transactionTime,\
-            msisdn = self.msisdn,\
-            ussdServiceCode = self.msisdn,\
-            ussdRequestString = '2',\
-            response = True\
-        )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's details\n2. Declarant's's details\n#. Back&action=request")
-        response = self.sendRequest(transactionId = self.transactionId,\
-            transactionTime = self.transactionTime,\
-            msisdn = self.msisdn,\
-            ussdServiceCode = self.msisdn,\
-            ussdRequestString = '2',\
-            response = True\
-        )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Declarant's names\n2. Declarant's phone number\n3. Declarant's capacity\n#. Back&action=request")
-        response = self.sendRequest(transactionId = self.transactionId,\
-            transactionTime = self.transactionTime,\
-            msisdn = self.msisdn,\
-            ussdServiceCode = self.msisdn,\
-            ussdRequestString = '2',\
-            response = True\
-        )
-        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
-        response = self.sendRequest(transactionId = self.transactionId,\
-            transactionTime = self.transactionTime,\
-            msisdn = self.msisdn,\
-            ussdServiceCode = self.msisdn,\
-            ussdRequestString = '1231',\
-            response = True\
-        )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Declarant's Phone Number:&action=request")
-        response = self.sendRequest(transactionId = self.transactionId,\
-            transactionTime = self.transactionTime,\
-            msisdn = self.msisdn,\
-            ussdServiceCode = self.msisdn,\
-            ussdRequestString = '1',\
-            response = True\
-        )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Declarant's phone number\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change declarant\'s Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1833,8 +1770,71 @@ class ViewTest(TestCase):
         self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
 
 
-    def testEditDeclarantCapacity(self):
+    def testEditDeclarantPhoneCancel(self):
         logger.info("\n\n Testing Edit Child First Name....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's details\n2. Declarant's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Names of Declarant\n2. Declarant's Phone Number\n3. Declarant's Capacity\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Declarant's Phone Number:&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Declarant's phone number\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '0',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=The information was not updated. Please start again.&action=end")
+
+
+    def testEditDeclarantCapacity(self):
+        logger.info("\n\n Testing DeclarantCapacity....\n\n")
         response = self.sendRequest()
         self.assertEquals(response.status_code, 200)
         self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
@@ -1894,3 +1894,65 @@ class ViewTest(TestCase):
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+
+    def testEditDeclarantCapacityCancel(self):
+        logger.info("\n\n Testing DeclarantCapacity....\n\n")
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Edit Birth Record\n2. Edit Death Record\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Deceased's details\n2. Declarant's details\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '2',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Names of Declarant\n2. Declarant's Phone Number\n3. Declarant's Capacity\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '3',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter reference number:&action=request')
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1231',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Capacity:\n1. Relative present at Death\n2. Other Relative\n3. Person present at death\n4. Household member\n5. Person with knowledge of death\n6. Person finding the body&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Declarant\'s Capacity \n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '0',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=The information was not updated. Please start again.&action=end")
