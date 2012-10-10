@@ -42,22 +42,22 @@ def ussd_menu(req, input_form=YoForm, output_template='ussd/yo.txt'):
         if response_screen.slug in settings.END_SCREENS:
             logger.info('Preparing to submit this data...')
             if request_string == '0':
-                resp = "The information was not recorded. Please start again."
                 if response_screen.slug in ["delete_thank_you","validate_thank_you","val_thank_you"]:
-                    resp = "Your request was not submitted. Please start again."
+                    response_screen = "Your request was not submitted. Please start again."
                 elif response_screen.slug == "new_name_thank":
-                    resp = "The information was not updated. Please start again."
+                    response_screen = "The information was not updated. Please start again."
+                else:
+                    response_screen = 'The information was not recorded. Please start again.'
+
                 logger.info("Submission canceled by user... ")
-                logger.info('Sending response to Yo " %s "'%render_to_string(output_template,{
-                    'response_content':urllib.quote(str(response_screen)),
-                    'action':'end',
-                    }))
-                return render_to_response(output_template, {
-                        'response_content':urllib.quote(str(resp)),
+            else:
+                forward_to_utl(session)
+
+            return render_to_response(output_template, {
+                        'response_content':urllib.quote(str(response_screen)),
                         'action':'end',
                         }, context_instance=RequestContext(req))
-            if not response_screen.slug in ["delete_thank_you","validate_thank_you","val_thank_you"]: #this is a temporaly condition since we don't have some of the traslation dictionary from utl
-                forward_to_utl(session)
+
 
 
         #is this a terminal screen or not?
@@ -77,14 +77,7 @@ def ussd_menu(req, input_form=YoForm, output_template='ussd/yo.txt'):
             else:
                 response_screen="You Have No Resumable Sessions"
 
-        #TODO: handle edit function
-        #TODO: handle user management
         #TODO: handle skips
-        logger.info('Sending response to Yo " %s "'%render_to_string(output_template,{
-            'response_content':urllib.quote(str(response_screen)),
-            'action':action,
-            }))
-
         return render_to_response(output_template, {
             'response_content':urllib.quote(str(response_screen)),
             'action':action,

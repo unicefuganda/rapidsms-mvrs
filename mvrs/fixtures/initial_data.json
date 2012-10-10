@@ -2510,7 +2510,7 @@
     { "fields" : { "command" : "edm2",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter mother's Names and Surname:",
+        "question" : "Enter mother's Name and Surname:",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
