@@ -1197,7 +1197,7 @@ class ViewTest(TestCase):
             ussdRequestString = 'Mama',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Mother\'s Names and Surname\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change Mother\'s Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1321,7 +1321,7 @@ class ViewTest(TestCase):
             ussdRequestString = 'Mama',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Change father\'s Names and Surname\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Change father\'s Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1375,7 +1375,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1231',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter father\'s nationality:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter father\'s nationality:\n1. Uganda\n2. Kenya\n3. Tanzania\n4. Rwanda\n5. Burundi\n6. South Sudan\n7. DR Congo\nOthers (Type in the country manually)&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\

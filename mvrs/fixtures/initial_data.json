@@ -1462,13 +1462,13 @@
         "pk" : "sex_edit"
     },
     { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change Mother's Names and Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
+        "question_text" : "Change Mother's Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
     },
         "model" : "ussd.question",
         "pk" : "new_name_pin_mother"
     },
     { "fields" : { "next" : "new_name_pin_mother",
-        "question_text" : "Enter mother's Names and Surname:"
+        "question_text" : "Enter mother's Name and Surname:"
     },
         "model" : "ussd.question",
         "pk" : "new_name_mother"
@@ -1498,7 +1498,7 @@
         "pk" : "edit_mother_nationality"
     },
     { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change father's Names and Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
+        "question_text" : "Change father's Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
     },
         "model" : "ussd.question",
         "pk" : "new_name_pin_father"
@@ -1522,7 +1522,7 @@
         "pk" : "new_nationality_pin_father"
     },
     { "fields" : { "next" : "new_nationality_pin_father",
-        "question_text" : "Enter father's nationality:"
+        "question_text" : "Enter father's nationality:\n1. Uganda\n2. Kenya\n3. Tanzania\n4. Rwanda\n5. Burundi\n6. South Sudan\n7. DR Congo\nOthers (Type in the country manually)"
     },
         "model" : "ussd.question",
         "pk" : "new_nationality_father"
@@ -2501,7 +2501,7 @@
     { "fields" : { "command" : "edm3",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Change Mother's Names and Surname\n\nEnter  PIN to confirm or \"0\" to cancel",
+        "question" : "Change Mother's Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2537,7 +2537,7 @@
     { "fields" : { "command" : "edf3",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Change father's Names and Surname\n\nEnter  PIN to confirm or \"0\" to cancel",
+        "question" : "Change father's Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2564,7 +2564,7 @@
     { "fields" : { "command" : "edfn2",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter father's nationality:",
+        "question" : "Enter father's nationality:\n1. Uganda\n2. Kenya\n3. Tanzania\n4. Rwanda\n5. Burundi\n6. South Sudan\n7. DR Congo\nOthers (Type in the country manually)",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
