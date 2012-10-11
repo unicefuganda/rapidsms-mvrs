@@ -13,11 +13,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 def ussd_menu(req, input_form=YoForm, output_template='ussd/yo.txt'):
-    form = None
-    if req.method == 'GET' and req.GET:
-        form = input_form(req.GET)
-    elif req.method == 'POST' and req.POST:
-        form = input_form(req.POST)
+    form = input_form(req.REQUEST)
     if form and form.is_valid():
         session = form.cleaned_data['transactionId']
         request_string = form.cleaned_data['ussdRequestString']
@@ -40,6 +36,8 @@ def ussd_menu(req, input_form=YoForm, output_template='ussd/yo.txt'):
 
         #if we have already progressed to the last screen, the user must have put in a pin or cancelled, lets forward to UTL
         if response_screen.slug in settings.END_SCREENS:
+            response_screen.next = None
+            response_screen.save()
             logger.info('Preparing to submit this data...')
             if request_string == '0':
                 if response_screen.slug in ["delete_thank_you","validate_thank_you","val_thank_you"]:
