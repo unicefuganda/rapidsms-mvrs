@@ -4,7 +4,6 @@ from django.conf import settings
 import urllib2
 import urllib
 import datetime
-import creator
 import logging
 
 logger = logging.getLogger(__name__)
