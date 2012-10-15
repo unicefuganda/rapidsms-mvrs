@@ -74,6 +74,7 @@ def ussd_menu(req, input_form=YoForm, output_template='ussd/yo.txt'):
                 logger.info('Resumed Broken Session: %s' % prev_session.transaction_id)
             else:
                 response_screen="You Have No Resumable Sessions"
+                action = 'end'
 
         #TODO: handle skips
         return render_to_response(output_template, {
