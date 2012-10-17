@@ -105,7 +105,7 @@ class ViewTest(TestCase):
                                     ussdRequestString = '1', \
                                     response = True\
                                     )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter mother's names:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Mother's Name and Surname:&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
                                     transactionTime = self.transactionTime, \
                                     msisdn = self.msisdn, \
@@ -121,7 +121,7 @@ class ViewTest(TestCase):
                                     ussdRequestString = '1', \
                                     response = True\
                                     )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter father's names:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Father's Name and Surname:&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
                                     transactionTime = self.transactionTime, \
                                     msisdn = self.msisdn, \
@@ -191,7 +191,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter mother's names:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Mother's Name and Surname:&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -207,7 +207,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter father's names:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Father's Name and Surname:&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\

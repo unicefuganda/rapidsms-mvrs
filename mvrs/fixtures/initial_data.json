@@ -1156,7 +1156,7 @@
         "pk" : "father_nationality"
     },
     { "fields" : { "next" : "father_nationality",
-        "question_text" : "Enter father's names:"
+        "question_text" : "Enter Father's Name and Surname:"
     },
         "model" : "ussd.question",
         "pk" : "father_name"
@@ -1168,7 +1168,7 @@
         "pk" : "mother_nationality"
     },
     { "fields" : { "next" : "mother_nationality",
-        "question_text" : "Enter mother's names:"
+        "question_text" : "Enter Mother's Name and Surname:"
     },
         "model" : "ussd.question",
         "pk" : "mother_name"
@@ -2069,7 +2069,7 @@
     { "fields" : { "command" : "e2",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter father's names:",
+        "question" : "Enter Father's Name and Surname:",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2087,7 +2087,7 @@
     { "fields" : { "command" : "e4",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter mother's names:",
+        "question" : "Enter Mother's Name and Surname:",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
