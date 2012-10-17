@@ -1,4 +1,3 @@
-from django.template.loader import render_to_string
 from rapidsms_uganda_ussd.ussd.forms import YoForm
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
@@ -36,8 +35,7 @@ def ussd_menu(req, input_form=YoForm, output_template='ussd/yo.txt'):
 
         #if we have already progressed to the last screen, the user must have put in a pin or cancelled, lets forward to UTL
         if response_screen.slug in settings.END_SCREENS:
-            response_screen.next = None
-            response_screen.save()
+            cache.delete(session.connection.identity)
             logger.info('Preparing to submit this data...')
             if request_string == '0':
                 if response_screen.slug in ["delete_thank_you","validate_thank_you","val_thank_you"]:
