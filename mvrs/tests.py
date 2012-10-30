@@ -5,6 +5,7 @@ import urllib2
 import urllib
 import datetime
 import logging
+from rapidsms_xforms.models import XForm, XFormField
 
 logger = logging.getLogger(__name__)
 
@@ -73,7 +74,7 @@ class ViewTest(TestCase):
                                     ussdRequestString = '1', \
                                     response = True\
                                     )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Child's Name :&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's Name\nor\nEnter '0' if not available :&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
                                     transactionTime = self.transactionTime, \
                                     msisdn = self.msisdn, \
@@ -121,7 +122,7 @@ class ViewTest(TestCase):
                                     ussdRequestString = '1', \
                                     response = True\
                                     )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Father's Name and Surname:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter father's Name and Surname\nor\nEnter '0' if not available:&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
                                     transactionTime = self.transactionTime, \
                                     msisdn = self.msisdn, \
@@ -159,7 +160,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Child's Name :&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's Name\nor\nEnter '0' if not available :&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -207,7 +208,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Father's Name and Surname:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter father's Name and Surname\nor\nEnter '0' if not available:&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -245,7 +246,7 @@ class ViewTest(TestCase):
             ussdRequestString = '1',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter Child's Name :&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's Name\nor\nEnter '0' if not available :&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\

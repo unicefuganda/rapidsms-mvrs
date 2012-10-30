@@ -318,28 +318,6 @@
         "model" : "ussd.screen",
         "pk" : "pin_confirm"
     },
-    { "fields" : { "label" : "New Pin Again",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 0,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 27
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_pin_again"
-    },
-    { "fields" : { "label" : "New Pin",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 0,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 28
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_pin"
-    },
     { "fields" : { "label" : "Thank you",
         "level" : 0,
         "lft" : 1,
@@ -1077,6 +1055,17 @@
         "model" : "ussd.screen",
         "pk" : "delete_record"
     },
+    { "fields" : { "label" : "New Pin Again",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 0,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 27
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_pin_again"
+    },
     { "fields" : { "label" : "Edit Death Record",
         "level" : 2,
         "lft" : 27,
@@ -1098,6 +1087,17 @@
     },
         "model" : "ussd.screen",
         "pk" : "edit_capacity"
+    },
+    { "fields" : { "label" : "New Pin",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 0,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 28
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_pin"
     },
     { "fields" : {  },
         "model" : "ussd.menu",
@@ -1143,6 +1143,12 @@
         "model" : "ussd.menu",
         "pk" : "declarant_details"
     },
+    { "fields" : { "next" : "new_name_thank",
+        "question_text" : "Change Child's Sex \n\nEnter  PIN to confirm or \"0\" to cancel"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_sex_pin"
+    },
     { "fields" : { "next" : "thank_msg",
         "question_text" : "Enter Pin to confirm or \"0\" to cancel"
     },
@@ -1156,7 +1162,7 @@
         "pk" : "father_nationality"
     },
     { "fields" : { "next" : "father_nationality",
-        "question_text" : "Enter Father's Name and Surname:"
+        "question_text" : "Enter Father's Name and Surname\nor\nEnter '0' if unknown:"
     },
         "model" : "ussd.question",
         "pk" : "father_name"
@@ -1233,18 +1239,6 @@
         "model" : "ussd.question",
         "pk" : "death_age"
     },
-    { "fields" : { "next" : "other_name",
-        "question_text" : "Enter Child's Name :"
-    },
-        "model" : "ussd.question",
-        "pk" : "child_first_name"
-    },
-    { "fields" : { "next" : "death_age",
-        "question_text" : "Enter names of the Deceased:"
-    },
-        "model" : "ussd.question",
-        "pk" : "death_name"
-    },
     { "fields" : { "next" : null,
         "question_text" : "Thank you creating a new user. You will receive a confirmation message."
     },
@@ -1287,35 +1281,29 @@
         "model" : "ussd.question",
         "pk" : "user_other_name"
     },
-    { "fields" : { "next" : "user_other_name",
-        "question_text" : "Enter User's name:"
+    { "fields" : { "next" : "new_sex_pin",
+        "question_text" : "Enter Child's Sex:\n1. Male\n2. Female"
     },
         "model" : "ussd.question",
-        "pk" : "user_first_name"
+        "pk" : "new_sex"
+    },
+    { "fields" : { "next" : "new_name_thank",
+        "question_text" : "Change Deceased's age\n\nEnter  PIN to confirm or \"0\" to cancel"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_age_pin"
+    },
+    { "fields" : { "next" : "new_age_pin",
+        "question_text" : "Age of the deceased:"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_age"
     },
     { "fields" : { "next" : null,
         "question_text" : "You will receive a message to confirm the change of your PIN. Protect your PIN. Keep it secret. Do not share it."
     },
         "model" : "ussd.question",
         "pk" : "pin_confirm"
-    },
-    { "fields" : { "next" : "pin_confirm",
-        "question_text" : "Re-enter new PIN:"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_pin_again"
-    },
-    { "fields" : { "next" : "new_pin_again",
-        "question_text" : "Enter new PIN:"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_pin"
-    },
-    { "fields" : { "next" : "new_pin",
-        "question_text" : "Enter Old Pin:"
-    },
-        "model" : "ussd.question",
-        "pk" : "modify_pin"
     },
     { "fields" : { "next" : null,
         "question_text" : "Thank you. You will receive a message with a summary of this record."
@@ -1328,12 +1316,6 @@
     },
         "model" : "ussd.question",
         "pk" : "val_pin"
-    },
-    { "fields" : { "next" : "val_pin",
-        "question_text" : "Enter reference number:"
-    },
-        "model" : "ussd.question",
-        "pk" : "view_record"
     },
     { "fields" : { "next" : null,
         "question_text" : "Thank you for validating this record. You will receive a confirmation message."
@@ -1353,12 +1335,6 @@
         "model" : "ussd.question",
         "pk" : "reenter"
     },
-    { "fields" : { "next" : "reenter",
-        "question_text" : "Enter reference number:"
-    },
-        "model" : "ussd.question",
-        "pk" : "validate_record"
-    },
     { "fields" : { "next" : null,
         "question_text" : "Thank you for updating the civil registry! You will receive a confirmation message."
     },
@@ -1377,11 +1353,59 @@
         "model" : "ussd.question",
         "pk" : "del_reenter"
     },
-    { "fields" : { "next" : "del_reenter",
+    { "fields" : { "next" : "new_age",
         "question_text" : "Enter reference number:"
     },
         "model" : "ussd.question",
-        "pk" : "delete_record"
+        "pk" : "edit_deceased_age"
+    },
+    { "fields" : { "next" : "new_sex",
+        "question_text" : "Enter reference number:"
+    },
+        "model" : "ussd.question",
+        "pk" : "sex_edit"
+    },
+    { "fields" : { "next" : "new_name_thank",
+        "question_text" : "Change Deceased's Sex\n\nEnter  PIN to confirm or \"0\" to cancel"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_sex_pin_dead"
+    },
+    { "fields" : { "next" : "new_sex_pin_dead",
+        "question_text" : "Sex of the deceased:\n1. Male\n2. Female"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_sex_dead"
+    },
+    { "fields" : { "next" : "new_sex_dead",
+        "question_text" : "Enter reference number:"
+    },
+        "model" : "ussd.question",
+        "pk" : "edit_deceased_sex"
+    },
+    { "fields" : { "next" : "new_name_thank",
+        "question_text" : "Change Deceased's Date of death\n\nEnter  PIN to confirm or \"0\" to cancel"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_dod_pin"
+    },
+    { "fields" : { "next" : "new_name_thank",
+        "question_text" : "Change Mother's Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_name_pin_mother"
+    },
+    { "fields" : { "next" : "new_name_pin_mother",
+        "question_text" : "Enter mother's Name and Surname:"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_name_mother"
+    },
+    { "fields" : { "next" : "new_dod_pin",
+        "question_text" : "Date of death (ddmmyyyy):"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_dod"
     },
     { "fields" : { "next" : null,
         "question_text" : "Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record."
@@ -1396,82 +1420,16 @@
         "pk" : "new_name_pin"
     },
     { "fields" : { "next" : "new_name_pin",
-        "question_text" : "Enter child's Name"
+        "question_text" : "Enter child's Name\nor\nEnter '0' if not available"
     },
         "model" : "ussd.question",
         "pk" : "new_name"
     },
-    { "fields" : { "next" : "new_name",
+    { "fields" : { "next" : "new_dod",
         "question_text" : "Enter reference number:"
     },
         "model" : "ussd.question",
-        "pk" : "edit_child_first_name"
-    },
-    { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change Child's Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_name_pin_o"
-    },
-    { "fields" : { "next" : "new_name_pin_o",
-        "question_text" : "Enter child's Surname"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_name_o"
-    },
-    { "fields" : { "next" : "new_name_o",
-        "question_text" : "Enter reference number:"
-    },
-        "model" : "ussd.question",
-        "pk" : "edit_child_other_name"
-    },
-    { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change Date of birth\n\nEnter  PIN to confirm or \"0\" to cancel"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_date_pin"
-    },
-    { "fields" : { "next" : "new_date_pin",
-        "question_text" : "Enter date of birth:\n1. Today\n2. Yesterday\nOther (Enter manually in the format ddmmyyyy)"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_dob"
-    },
-    { "fields" : { "next" : "new_dob",
-        "question_text" : "Enter reference number:"
-    },
-        "model" : "ussd.question",
-        "pk" : "dob_edit"
-    },
-    { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change Child's Sex \n\nEnter  PIN to confirm or \"0\" to cancel"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_sex_pin"
-    },
-    { "fields" : { "next" : "new_sex_pin",
-        "question_text" : "Enter Child's Sex:\n1. Male\n2. Female"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_sex"
-    },
-    { "fields" : { "next" : "new_sex",
-        "question_text" : "Enter reference number:"
-    },
-        "model" : "ussd.question",
-        "pk" : "sex_edit"
-    },
-    { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change Mother's Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_name_pin_mother"
-    },
-    { "fields" : { "next" : "new_name_pin_mother",
-        "question_text" : "Enter mother's Name and Surname:"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_name_mother"
+        "pk" : "edit_dod"
     },
     { "fields" : { "next" : "new_name_mother",
         "question_text" : "Enter reference number:"
@@ -1491,11 +1449,107 @@
         "model" : "ussd.question",
         "pk" : "new_nationality_mother"
     },
+    { "fields" : { "next" : "new_name",
+        "question_text" : "Enter reference number:"
+    },
+        "model" : "ussd.question",
+        "pk" : "edit_child_first_name"
+    },
+    { "fields" : { "next" : "new_name_thank",
+        "question_text" : "Change Child's Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_name_pin_o"
+    },
+    { "fields" : { "next" : "new_name_pin_o",
+        "question_text" : "Enter child's Surname"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_name_o"
+    },
+    { "fields" : { "next" : "new_name_thank",
+        "question_text" : "Change declarant's Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_name_pin_declarant"
+    },
+    { "fields" : { "next" : "new_name_pin_declarant",
+        "question_text" : "declarant's Name and Surname:"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_name_declarant"
+    },
     { "fields" : { "next" : "new_nationality_mother",
         "question_text" : "Enter reference number:"
     },
         "model" : "ussd.question",
         "pk" : "edit_mother_nationality"
+    },
+    { "fields" : { "next" : "new_name_o",
+        "question_text" : "Enter reference number:"
+    },
+        "model" : "ussd.question",
+        "pk" : "edit_child_other_name"
+    },
+    { "fields" : { "next" : "new_name_thank",
+        "question_text" : "Change Date of birth\n\nEnter  PIN to confirm or \"0\" to cancel"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_date_pin"
+    },
+    { "fields" : { "next" : "new_date_pin",
+        "question_text" : "Enter date of birth:\n1. Today\n2. Yesterday\nOther (Enter manually in the format ddmmyyyy)"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_dob"
+    },
+    { "fields" : { "next" : "new_name_declarant",
+        "question_text" : "Enter reference number:"
+    },
+        "model" : "ussd.question",
+        "pk" : "edit_declarant_name"
+    },
+    { "fields" : { "next" : "new_name_thank",
+        "question_text" : "Change Declarant's phone number\n\nEnter  PIN to confirm or \"0\" to cancel"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_phone_pin"
+    },
+    { "fields" : { "next" : "new_phone_pin",
+        "question_text" : "Declarant's Phone Number:"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_phone"
+    },
+    { "fields" : { "next" : "new_dob",
+        "question_text" : "Enter reference number:"
+    },
+        "model" : "ussd.question",
+        "pk" : "dob_edit"
+    },
+    { "fields" : { "next" : "other_name",
+        "question_text" : "Enter child's Name\nor\nEnter '0' if not available :"
+    },
+        "model" : "ussd.question",
+        "pk" : "child_first_name"
+    },
+    { "fields" : { "next" : "death_age",
+        "question_text" : "Enter names of the Deceased:"
+    },
+        "model" : "ussd.question",
+        "pk" : "death_name"
+    },
+    { "fields" : { "next" : "user_other_name",
+        "question_text" : "Enter User's name:"
+    },
+        "model" : "ussd.question",
+        "pk" : "user_first_name"
+    },
+    { "fields" : { "next" : "new_pin",
+        "question_text" : "Enter Old Pin:"
+    },
+        "model" : "ussd.question",
+        "pk" : "modify_pin"
     },
     { "fields" : { "next" : "new_name_thank",
         "question_text" : "Change father's Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
@@ -1508,6 +1562,18 @@
     },
         "model" : "ussd.question",
         "pk" : "new_name_father"
+    },
+    { "fields" : { "next" : "val_pin",
+        "question_text" : "Enter reference number:"
+    },
+        "model" : "ussd.question",
+        "pk" : "view_record"
+    },
+    { "fields" : { "next" : "reenter",
+        "question_text" : "Enter reference number:"
+    },
+        "model" : "ussd.question",
+        "pk" : "validate_record"
     },
     { "fields" : { "next" : "new_name_father",
         "question_text" : "Enter reference number:"
@@ -1551,90 +1617,6 @@
         "model" : "ussd.question",
         "pk" : "edit_deceased_name"
     },
-    { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change Deceased's age\n\nEnter  PIN to confirm or \"0\" to cancel"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_age_pin"
-    },
-    { "fields" : { "next" : "new_age_pin",
-        "question_text" : "Age of the deceased:"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_age"
-    },
-    { "fields" : { "next" : "new_age",
-        "question_text" : "Enter reference number:"
-    },
-        "model" : "ussd.question",
-        "pk" : "edit_deceased_age"
-    },
-    { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change Deceased's Sex\n\nEnter  PIN to confirm or \"0\" to cancel"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_sex_pin_dead"
-    },
-    { "fields" : { "next" : "new_sex_pin_dead",
-        "question_text" : "Sex of the deceased:\n1. Male\n2. Female"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_sex_dead"
-    },
-    { "fields" : { "next" : "new_sex_dead",
-        "question_text" : "Enter reference number:"
-    },
-        "model" : "ussd.question",
-        "pk" : "edit_deceased_sex"
-    },
-    { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change Deceased's Date of death\n\nEnter  PIN to confirm or \"0\" to cancel"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_dod_pin"
-    },
-    { "fields" : { "next" : "new_dod_pin",
-        "question_text" : "Date of death (ddmmyyyy):"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_dod"
-    },
-    { "fields" : { "next" : "new_dod",
-        "question_text" : "Enter reference number:"
-    },
-        "model" : "ussd.question",
-        "pk" : "edit_dod"
-    },
-    { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change declarant's Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_name_pin_declarant"
-    },
-    { "fields" : { "next" : "new_name_pin_declarant",
-        "question_text" : "declarant's Name and Surname:"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_name_declarant"
-    },
-    { "fields" : { "next" : "new_name_declarant",
-        "question_text" : "Enter reference number:"
-    },
-        "model" : "ussd.question",
-        "pk" : "edit_declarant_name"
-    },
-    { "fields" : { "next" : "new_name_thank",
-        "question_text" : "Change Declarant's phone number\n\nEnter  PIN to confirm or \"0\" to cancel"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_phone_pin"
-    },
-    { "fields" : { "next" : "new_phone_pin",
-        "question_text" : "Declarant's Phone Number:"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_phone"
-    },
     { "fields" : { "next" : "new_phone",
         "question_text" : "Enter reference number:"
     },
@@ -1653,11 +1635,33 @@
         "model" : "ussd.question",
         "pk" : "new_capacity"
     },
+    { "fields" : { "next" : "del_reenter",
+        "question_text" : "Enter reference number:"
+    },
+        "model" : "ussd.question",
+        "pk" : "delete_record"
+    },
+    { "fields" : { "next" : "pin_confirm",
+        "question_text" : "Re-enter new PIN:"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_pin_again"
+    },
     { "fields" : { "next" : "new_capacity",
         "question_text" : "Enter reference number:"
     },
         "model" : "ussd.question",
         "pk" : "edit_capacity"
+    },
+    { "fields" : { "next" : "new_pin_again",
+        "question_text" : "Enter new PIN:"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_pin"
+    },
+    { "fields" : { "field" : 54 },
+        "model" : "ussd.field",
+        "pk" : "new_sex_pin"
     },
     { "fields" : { "field" : 5 },
         "model" : "ussd.field",
@@ -1719,14 +1723,6 @@
         "model" : "ussd.field",
         "pk" : "death_age"
     },
-    { "fields" : { "field" : 20 },
-        "model" : "ussd.field",
-        "pk" : "child_first_name"
-    },
-    { "fields" : { "field" : 21 },
-        "model" : "ussd.field",
-        "pk" : "death_name"
-    },
     { "fields" : { "field" : 23 },
         "model" : "ussd.field",
         "pk" : "e_thank_you"
@@ -1755,25 +1751,21 @@
         "model" : "ussd.field",
         "pk" : "user_other_name"
     },
-    { "fields" : { "field" : 30 },
+    { "fields" : { "field" : 55 },
         "model" : "ussd.field",
-        "pk" : "user_first_name"
+        "pk" : "new_sex"
+    },
+    { "fields" : { "field" : 66 },
+        "model" : "ussd.field",
+        "pk" : "new_age_pin"
+    },
+    { "fields" : { "field" : 67 },
+        "model" : "ussd.field",
+        "pk" : "new_age"
     },
     { "fields" : { "field" : 31 },
         "model" : "ussd.field",
         "pk" : "pin_confirm"
-    },
-    { "fields" : { "field" : 32 },
-        "model" : "ussd.field",
-        "pk" : "new_pin_again"
-    },
-    { "fields" : { "field" : 33 },
-        "model" : "ussd.field",
-        "pk" : "new_pin"
-    },
-    { "fields" : { "field" : 34 },
-        "model" : "ussd.field",
-        "pk" : "modify_pin"
     },
     { "fields" : { "field" : 35 },
         "model" : "ussd.field",
@@ -1782,10 +1774,6 @@
     { "fields" : { "field" : 36 },
         "model" : "ussd.field",
         "pk" : "val_pin"
-    },
-    { "fields" : { "field" : 37 },
-        "model" : "ussd.field",
-        "pk" : "view_record"
     },
     { "fields" : { "field" : 38 },
         "model" : "ussd.field",
@@ -1799,10 +1787,6 @@
         "model" : "ussd.field",
         "pk" : "reenter"
     },
-    { "fields" : { "field" : 41 },
-        "model" : "ussd.field",
-        "pk" : "validate_record"
-    },
     { "fields" : { "field" : 42 },
         "model" : "ussd.field",
         "pk" : "delete_thank_you"
@@ -1815,9 +1799,41 @@
         "model" : "ussd.field",
         "pk" : "del_reenter"
     },
-    { "fields" : { "field" : 45 },
+    { "fields" : { "field" : 49 },
         "model" : "ussd.field",
-        "pk" : "delete_record"
+        "pk" : "edit_deceased_age"
+    },
+    { "fields" : { "field" : 49 },
+        "model" : "ussd.field",
+        "pk" : "sex_edit"
+    },
+    { "fields" : { "field" : 68 },
+        "model" : "ussd.field",
+        "pk" : "new_sex_pin_dead"
+    },
+    { "fields" : { "field" : 69 },
+        "model" : "ussd.field",
+        "pk" : "new_sex_dead"
+    },
+    { "fields" : { "field" : 49 },
+        "model" : "ussd.field",
+        "pk" : "edit_deceased_sex"
+    },
+    { "fields" : { "field" : 70 },
+        "model" : "ussd.field",
+        "pk" : "new_dod_pin"
+    },
+    { "fields" : { "field" : 56 },
+        "model" : "ussd.field",
+        "pk" : "new_name_pin_mother"
+    },
+    { "fields" : { "field" : 57 },
+        "model" : "ussd.field",
+        "pk" : "new_name_mother"
+    },
+    { "fields" : { "field" : 71 },
+        "model" : "ussd.field",
+        "pk" : "new_dod"
     },
     { "fields" : { "field" : 46 },
         "model" : "ussd.field",
@@ -1833,51 +1849,7 @@
     },
     { "fields" : { "field" : 49 },
         "model" : "ussd.field",
-        "pk" : "edit_child_first_name"
-    },
-    { "fields" : { "field" : 50 },
-        "model" : "ussd.field",
-        "pk" : "new_name_pin_o"
-    },
-    { "fields" : { "field" : 51 },
-        "model" : "ussd.field",
-        "pk" : "new_name_o"
-    },
-    { "fields" : { "field" : 49 },
-        "model" : "ussd.field",
-        "pk" : "edit_child_other_name"
-    },
-    { "fields" : { "field" : 52 },
-        "model" : "ussd.field",
-        "pk" : "new_date_pin"
-    },
-    { "fields" : { "field" : 53 },
-        "model" : "ussd.field",
-        "pk" : "new_dob"
-    },
-    { "fields" : { "field" : 49 },
-        "model" : "ussd.field",
-        "pk" : "dob_edit"
-    },
-    { "fields" : { "field" : 54 },
-        "model" : "ussd.field",
-        "pk" : "new_sex_pin"
-    },
-    { "fields" : { "field" : 55 },
-        "model" : "ussd.field",
-        "pk" : "new_sex"
-    },
-    { "fields" : { "field" : 49 },
-        "model" : "ussd.field",
-        "pk" : "sex_edit"
-    },
-    { "fields" : { "field" : 56 },
-        "model" : "ussd.field",
-        "pk" : "new_name_pin_mother"
-    },
-    { "fields" : { "field" : 57 },
-        "model" : "ussd.field",
-        "pk" : "new_name_mother"
+        "pk" : "edit_dod"
     },
     { "fields" : { "field" : 49 },
         "model" : "ussd.field",
@@ -1893,7 +1865,71 @@
     },
     { "fields" : { "field" : 49 },
         "model" : "ussd.field",
+        "pk" : "edit_child_first_name"
+    },
+    { "fields" : { "field" : 50 },
+        "model" : "ussd.field",
+        "pk" : "new_name_pin_o"
+    },
+    { "fields" : { "field" : 51 },
+        "model" : "ussd.field",
+        "pk" : "new_name_o"
+    },
+    { "fields" : { "field" : 72 },
+        "model" : "ussd.field",
+        "pk" : "new_name_pin_declarant"
+    },
+    { "fields" : { "field" : 73 },
+        "model" : "ussd.field",
+        "pk" : "new_name_declarant"
+    },
+    { "fields" : { "field" : 49 },
+        "model" : "ussd.field",
         "pk" : "edit_mother_nationality"
+    },
+    { "fields" : { "field" : 49 },
+        "model" : "ussd.field",
+        "pk" : "edit_child_other_name"
+    },
+    { "fields" : { "field" : 52 },
+        "model" : "ussd.field",
+        "pk" : "new_date_pin"
+    },
+    { "fields" : { "field" : 53 },
+        "model" : "ussd.field",
+        "pk" : "new_dob"
+    },
+    { "fields" : { "field" : 49 },
+        "model" : "ussd.field",
+        "pk" : "edit_declarant_name"
+    },
+    { "fields" : { "field" : 74 },
+        "model" : "ussd.field",
+        "pk" : "new_phone_pin"
+    },
+    { "fields" : { "field" : 75 },
+        "model" : "ussd.field",
+        "pk" : "new_phone"
+    },
+    { "fields" : { "field" : 49 },
+        "model" : "ussd.field",
+        "pk" : "dob_edit"
+    },
+    { "fields" : { "field" : 20 },
+        "model" : "ussd.field",
+        "pk" : "child_first_name"
+    },
+    { "fields" : { "field" : 21 },
+        "model" : "ussd.field",
+        "pk" : "death_name"
+    },
+    { "fields" : { "field" : 30 },
+        "model" : "ussd.field",
+        "pk" : "user_first_name"
+    },
+    { "fields" : { "field" : 34 },
+        "model" : "ussd.field",
+        "pk" : "modify_pin"
     },
     { "fields" : { "field" : 60 },
         "model" : "ussd.field",
@@ -1902,6 +1938,14 @@
     { "fields" : { "field" : 61 },
         "model" : "ussd.field",
         "pk" : "new_name_father"
+    },
+    { "fields" : { "field" : 37 },
+        "model" : "ussd.field",
+        "pk" : "view_record"
+    },
+    { "fields" : { "field" : 41 },
+        "model" : "ussd.field",
+        "pk" : "validate_record"
     },
     { "fields" : { "field" : 49 },
         "model" : "ussd.field",
@@ -1931,62 +1975,6 @@
         "model" : "ussd.field",
         "pk" : "edit_deceased_name"
     },
-    { "fields" : { "field" : 66 },
-        "model" : "ussd.field",
-        "pk" : "new_age_pin"
-    },
-    { "fields" : { "field" : 67 },
-        "model" : "ussd.field",
-        "pk" : "new_age"
-    },
-    { "fields" : { "field" : 49 },
-        "model" : "ussd.field",
-        "pk" : "edit_deceased_age"
-    },
-    { "fields" : { "field" : 68 },
-        "model" : "ussd.field",
-        "pk" : "new_sex_pin_dead"
-    },
-    { "fields" : { "field" : 69 },
-        "model" : "ussd.field",
-        "pk" : "new_sex_dead"
-    },
-    { "fields" : { "field" : 49 },
-        "model" : "ussd.field",
-        "pk" : "edit_deceased_sex"
-    },
-    { "fields" : { "field" : 70 },
-        "model" : "ussd.field",
-        "pk" : "new_dod_pin"
-    },
-    { "fields" : { "field" : 71 },
-        "model" : "ussd.field",
-        "pk" : "new_dod"
-    },
-    { "fields" : { "field" : 49 },
-        "model" : "ussd.field",
-        "pk" : "edit_dod"
-    },
-    { "fields" : { "field" : 72 },
-        "model" : "ussd.field",
-        "pk" : "new_name_pin_declarant"
-    },
-    { "fields" : { "field" : 73 },
-        "model" : "ussd.field",
-        "pk" : "new_name_declarant"
-    },
-    { "fields" : { "field" : 49 },
-        "model" : "ussd.field",
-        "pk" : "edit_declarant_name"
-    },
-    { "fields" : { "field" : 74 },
-        "model" : "ussd.field",
-        "pk" : "new_phone_pin"
-    },
-    { "fields" : { "field" : 75 },
-        "model" : "ussd.field",
-        "pk" : "new_phone"
-    },
     { "fields" : { "field" : 49 },
         "model" : "ussd.field",
         "pk" : "edit_phone_number"
@@ -1999,9 +1987,21 @@
         "model" : "ussd.field",
         "pk" : "new_capacity"
     },
+    { "fields" : { "field" : 45 },
+        "model" : "ussd.field",
+        "pk" : "delete_record"
+    },
+    { "fields" : { "field" : 78 },
+        "model" : "ussd.field",
+        "pk" : "new_pin_again"
+    },
     { "fields" : { "field" : 49 },
         "model" : "ussd.field",
         "pk" : "edit_capacity"
+    },
+    { "fields" : { "field" : 78 },
+        "model" : "ussd.field",
+        "pk" : "new_pin"
     },
     { "fields" : { "terminal" : true,
         "text" : "Thank you for recording a new birth! You will  receive a confirmation message with the summary of the record and the registration number"
@@ -2042,7 +2042,7 @@
     { "fields" : { "command" : "e15",
         "field_type" : "text",
         "order" : 0,
-        "question" : "Enter Child's Name :",
+        "question" : "Enter child's Name\nor\nEnter '0' if not available :",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2069,7 +2069,7 @@
     { "fields" : { "command" : "e2",
         "field_type" : "text",
         "order" : 1,
-        "question" : "Enter Father's Name and Surname:",
+        "question" : "Enter father's Name and Surname\nor\nEnter '0' if not available:",
         "xform" : 1
     },
         "model" : "rapidsms_xforms.xformfield",
@@ -2695,6 +2695,51 @@
     },
         "model" : "rapidsms_xforms.xformfield",
         "pk" : 77
+    },
+    { "fields" : { "command" : "pin1",
+        "field_type" : "pin",
+        "order" : 3,
+        "question" : null,
+        "xform" : 1
+    },
+        "model" : "rapidsms_xforms.xformfield",
+        "pk" : 78
+    },
+    { "fields" : { "field" : 78,
+        "message" : "No pin entered",
+        "order" : 1,
+        "test" : "None",
+        "type" : "req_val"
+    },
+        "model" : "rapidsms_xforms.xformfieldconstraint",
+        "pk" : 1
+    },
+    { "fields" : { "field" : 78,
+        "message" : "Pin must be 4 digits",
+        "order" : 2,
+        "test" : "4",
+        "type" : "max_len"
+    },
+        "model" : "rapidsms_xforms.xformfieldconstraint",
+        "pk" : 2
+    },
+    { "fields" : { "field" : 78,
+        "message" : "Pin must be 4 digits",
+        "order" : 3,
+        "test" : "4",
+        "type" : "min_len"
+    },
+        "model" : "rapidsms_xforms.xformfieldconstraint",
+        "pk" : 3
+    },
+    { "fields" : { "field" : 78,
+        "message" : "Pin must be numbers only",
+        "order" : 4,
+        "test" : "9999",
+        "type" : "max_val"
+    },
+        "model" : "rapidsms_xforms.xformfieldconstraint",
+        "pk" : 4
     },
     { "fields" : { "created" : "2012-09-26 07:31:03",
         "datatype" : "int",
@@ -3564,6 +3609,20 @@
         "model" : "eav.attribute",
         "pk" : 12
     },
+    { "fields" : { "created" : "2012-10-30 06:18:57",
+        "datatype" : "int",
+        "description" : null,
+        "enum_group" : null,
+        "modified" : "2012-10-30 06:18:57",
+        "name" : "Pin",
+        "required" : false,
+        "site" : 1,
+        "slug" : "test_pin1",
+        "type" : null
+    },
+        "model" : "eav.attribute",
+        "pk" : 78
+    },
     { "fields" : { "created" : "2012-09-28 03:41:15",
         "datatype" : "text",
         "description" : null,
@@ -3774,7 +3833,6 @@
         "model" : "eav.attribute",
         "pk" : 37
     },
-
     { "fields" : { "date_joined" : "2012-09-26 07:28:38",
         "email" : "",
         "first_name" : "",
