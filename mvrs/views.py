@@ -5,7 +5,7 @@ from django.template import RequestContext
 import urllib
 from ussd.models import *
 from django.conf import settings
-from tasks import forward_to_utl
+from tasks import forward_to_utl, ForwardToTel
 from django.core.cache import cache
 import logging
 
@@ -54,8 +54,7 @@ def ussd_menu(req, input_form=YoForm, output_template='ussd/yo.txt'):
 
                 logger.info("Submission canceled by user... ")
             else:
-                forward_to_utl(session)
-
+                response_screen =  forward_to_utl(session,forward_url=settings.FORWARD_URL)
             return render_to_response(output_template, {
                         'response_content':urllib.quote(str(response_screen)),
                         'action':'end',
