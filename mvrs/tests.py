@@ -146,7 +146,7 @@ class ViewTest(TestCase):
                                     ussdRequestString = '9045', \
                                     response = True\
                                     )
-        self.assertEquals(urllib2.unquote(response.content), 'responseString=Thank you for recording a new birth! You will  receive a confirmation message with the summary of the record and the registration number&action=end')
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=This phone 256776520831 is not registered on Mobile VRS&action=end')
 
     def testBirthNotifyCancel(self):
         logger.info("\n\n Testing Birth Notify....\n\n")
@@ -354,7 +354,7 @@ class ViewTest(TestCase):
                                     ussdRequestString = '9045', \
                                     response = True\
                                     )
-        self.assertEquals(urllib2.unquote(response.content), 'responseString=Thank you for recording a new death. Please inform relatives to present themselves at the Registrars office to complete the process&action=end')
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=This phone 256776520831 is not registered on Mobile VRS&action=end')
 
     def testResumeDeathNotify(self):
         logger.info("\n\nTesting Death Notify Resume\n\n")
@@ -498,7 +498,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), 'responseString=Thank you for recording a new death. Please inform relatives to present themselves at the Registrars office to complete the process&action=end')
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=This phone 256776520831 is not registered on Mobile VRS&action=end')
 
     def testUserManagementUserCreation(self):
         logger.info("\n\nTesting User Management User Creation\n\n")
@@ -569,6 +569,14 @@ class ViewTest(TestCase):
             ussdRequestString = 'kampala',\
             response = True\
         )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Capacity:\n1. Notifier\n2. Registrar&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
         self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter  PIN to confirm or "0" to cancel&action=request')
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
@@ -577,7 +585,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you creating a new user. You will receive a confirmation message.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
     def testModifyPin(self):
         logger.info("\n\nTesting User management modify Pin\n\n")
@@ -624,7 +632,7 @@ class ViewTest(TestCase):
             ussdRequestString = '2325',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=You will receive a message to confirm the change of your PIN. Protect your PIN. Keep it secret. Do not share it.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
     def testValidateViewRecord(self):
         logger.info("\n\nTesting Validate View Record\n\n")
@@ -663,7 +671,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), 'responseString=Thank you. You will receive a message with a summary of this record.&action=end')
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=This phone 256776520831 is not registered on Mobile VRS&action=end')
 
 
     def testValidateViewRecordCancel(self):
@@ -751,7 +759,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), 'responseString=Thank you for validating this record. You will receive a confirmation message.&action=end')
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=This phone 256776520831 is not registered on Mobile VRS&action=end')
 
     def testValidateValidateRecordCancel(self):
         logger.info("\n\nTesting Validate View Record\n\n")
@@ -845,7 +853,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), 'responseString=Thank you for updating the civil registry! You will receive a confirmation message.&action=end')
+        self.assertEquals(urllib2.unquote(response.content), 'responseString=This phone 256776520831 is not registered on Mobile VRS&action=end')
 
 
     def testDeleteValidateRecordCancel(self):
@@ -955,7 +963,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
     def testEditChildOtherName(self):
         logger.info("\n\n Testing Edit Child First Name....\n\n")
@@ -1017,7 +1025,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
 
     def testEditChildDoB(self):
@@ -1080,7 +1088,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
     def testEditChildSex(self):
         logger.info("\n\n Testing Edit Child First Name....\n\n")
@@ -1142,7 +1150,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
 
     def testEditMotherName(self):
@@ -1205,7 +1213,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
     def testEditMotherNatioanality(self):
         logger.info("\n\n Testing Edit Child First Name....\n\n")
@@ -1267,7 +1275,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
     def testEditFatherName(self):
         logger.info("\n\n Testing Edit Child First Name....\n\n")
@@ -1329,7 +1337,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
     def testEditFatherNationality(self):
         logger.info("\n\n Testing Edit Child First Name....\n\n")
@@ -1391,7 +1399,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
     def testEditDeceasedName(self):
         logger.info("\n\n Testing Edit Child First Name....\n\n")
@@ -1453,7 +1461,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
     def testEditDeceasedAge(self):
         logger.info("\n\n Testing Edit Child First Name....\n\n")
@@ -1515,7 +1523,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
 
     def testEditDeceasedSex(self):
@@ -1578,7 +1586,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
 
     def testEditDeceasedDod(self):
@@ -1641,7 +1649,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
 
     def testEditDeclarantName(self):
@@ -1704,7 +1712,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
 
     def testEditDeclarantPhone(self):
@@ -1767,7 +1775,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
 
     def testEditDeclarantPhoneCancel(self):
@@ -1893,7 +1901,7 @@ class ViewTest(TestCase):
             ussdRequestString = '9045',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record.&action=end")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
 
     def testEditDeclarantCapacityCancel(self):
         logger.info("\n\n Testing DeclarantCapacity....\n\n")

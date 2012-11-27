@@ -4,6 +4,7 @@ Created on Jul 12, 2012
 @author: asseym
 '''
 from django.conf import settings
+from rapidsms_xforms.models import XFormField
 
 def dictinvert(dict):
     inv = {}
@@ -67,4 +68,10 @@ def get_dictionary_for_session(session):
     for dict in [getattr(settings,d) for d in dir(settings) if d.startswith('UTL_')]:
         if _all_match(session,dict['positions']):
             return dict
-    raise Exception('Dictionary for this session cannot be found in session')
+    raise Exception('Dictionary for this session cannot be found in session %s' %session.id)
+
+def _parse_pin(a,b): return b
+
+def register_custom_field_types():
+    XFormField.register_field_type('pin', 'Pin', _parse_pin,xforms_type='string', db_type=XFormField.TYPE_INT)
+	

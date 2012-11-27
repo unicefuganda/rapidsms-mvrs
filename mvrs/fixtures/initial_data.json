@@ -1099,6 +1099,17 @@
         "model" : "ussd.screen",
         "pk" : "new_pin"
     },
+    { "fields" : { "label" : "User Type",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 68
+    },
+        "model" : "ussd.screen",
+        "pk" : "user_type"
+    },
     { "fields" : {  },
         "model" : "ussd.menu",
         "pk" : "ussd_root"
@@ -1251,7 +1262,7 @@
         "model" : "ussd.question",
         "pk" : "e_confirm"
     },
-    { "fields" : { "next" : "e_confirm",
+    { "fields" : { "next" : "user_type",
         "question_text" : "Enter User's parish or ward:"
     },
         "model" : "ussd.question",
@@ -1659,6 +1670,12 @@
         "model" : "ussd.question",
         "pk" : "new_pin"
     },
+    { "fields" : { "next" : "e_confirm",
+        "question_text" : "Capacity:\n1. Notifier\n2. Registrar"
+    },
+        "model" : "ussd.question",
+        "pk" : "user_type"
+    },
     { "fields" : { "field" : 54 },
         "model" : "ussd.field",
         "pk" : "new_sex_pin"
@@ -2002,6 +2019,10 @@
     { "fields" : { "field" : 78 },
         "model" : "ussd.field",
         "pk" : "new_pin"
+    },
+    { "fields" : { "field" : 79 },
+        "model" : "ussd.field",
+        "pk" : "user_type"
     },
     { "fields" : { "terminal" : true,
         "text" : "Thank you for recording a new birth! You will  receive a confirmation message with the summary of the record and the registration number"
@@ -2695,6 +2716,15 @@
     },
         "model" : "rapidsms_xforms.xformfield",
         "pk" : 77
+    },
+    { "fields" : { "command" : "ut",
+        "field_type" : "text",
+        "order" : 1,
+        "question" : "Capacity:\n1. Notifier\n2. Registrar",
+        "xform" : 1
+    },
+        "model" : "rapidsms_xforms.xformfield",
+        "pk" : 79
     },
     { "fields" : { "command" : "pin1",
         "field_type" : "pin",
@@ -3748,6 +3778,20 @@
     },
         "model" : "eav.attribute",
         "pk" : 26
+    },
+    { "fields" : { "created" : "2012-11-27 01:37:23",
+        "datatype" : "text",
+        "description" : null,
+        "enum_group" : null,
+        "modified" : "2012-11-27 01:37:23",
+        "name" : "user_type",
+        "required" : false,
+        "site" : 1,
+        "slug" : "test_ut",
+        "type" : null
+    },
+        "model" : "eav.attribute",
+        "pk" : 79
     },
     { "fields" : { "created" : "2012-10-01 04:13:16",
         "datatype" : "text",

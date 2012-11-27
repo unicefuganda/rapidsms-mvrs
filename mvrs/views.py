@@ -5,20 +5,15 @@ from django.template import RequestContext
 import urllib
 from ussd.models import *
 from django.conf import settings
-from tasks import forward_to_utl, ForwardToTel
+from tasks import forward_to_utl
 from django.core.cache import cache
 import logging
 
 logger = logging.getLogger(__name__)
 
 def ussd_menu(req, input_form=YoForm, output_template='ussd/yo.txt'):
-
-    # This is totally temp. Here because was needed in a short-time. If you are reading this, is because I got lazy and ignored it
-    # please implement it better
-    def parse(a,b): return b
-    XFormField.register_field_type('pin', 'Pin', parse,
-        xforms_type='string', db_type=XFormField.TYPE_INT)
-
+    def _parse_pin(a,b): return b
+    XFormField.register_field_type('pin', 'Pin', _parse_pin,xforms_type='string', db_type=XFormField.TYPE_INT)
     form = input_form(req.REQUEST)
     if form and form.is_valid():
         session = form.cleaned_data['transactionId']
