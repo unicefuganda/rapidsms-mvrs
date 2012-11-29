@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.test import TestCase
 from django.test.client import Client
 from django.conf import settings
@@ -5,7 +6,7 @@ import urllib2
 import urllib
 import datetime
 import logging
-from rapidsms_xforms.models import XForm, XFormField
+from mvrs.utils import _parse_name
 
 logger = logging.getLogger(__name__)
 
@@ -561,7 +562,7 @@ class ViewTest(TestCase):
             ussdRequestString = '078942422424',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter User's parish or ward:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Capacity:\n1. Notifier\n2. Registrar&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -569,7 +570,7 @@ class ViewTest(TestCase):
             ussdRequestString = 'kampala',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Capacity:\n1. Notifier\n2. Registrar&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter User's parish or ward:&action=request")
         response = self.sendRequest(transactionId = self.transactionId,\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
@@ -1964,3 +1965,13 @@ class ViewTest(TestCase):
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=The information was not updated. Please start again.&action=end")
+
+
+#class ParseFuncTest(TestCase):
+#    def setUp(self):
+#        c = self.client
+#
+#    def testParseName(self):
+#        self.assertEqual("Kenneth Matovu",_parse_name('',"kenneth matovu"))
+#        #self.assertRaises(ValidationError,_parse_name('','Kenneth1w Matovu'))
+#        self.assertRaises(ValidationError,_parse_name("",'Kenneth'))
