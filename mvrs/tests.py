@@ -6,7 +6,6 @@ import urllib2
 import urllib
 import datetime
 import logging
-from mvrs.utils import _parse_name
 
 logger = logging.getLogger(__name__)
 
@@ -587,6 +586,86 @@ class ViewTest(TestCase):
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=This phone 256776520831 is not registered on Mobile VRS&action=end")
+
+    def testUserManagementUserCreationResume(self):
+        logger.info("\n\nTesting User Management User Creation\n\n")
+        self.transactionId = '50012'
+        response = self.sendRequest()
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '5',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Create User\n2. Modify Pin\n#. Back&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter User's name:&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString ="user register",\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter User's surname:&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = 'Other names',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter User's sex:\n1. Male\n2. Female&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '1',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter User's Date of Birth (ddmmyyyy):&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '12121999',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter user's phone number:&action=request")
+        response = self.sendRequest(transactionId = self.transactionId,\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '078942422424',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Capacity:\n1. Notifier\n2. Registrar&action=request")
+        response = self.sendRequest(transactionId = "1233444",\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = 'kampala',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request")
+        response = self.sendRequest(transactionId = '1233444',\
+            transactionTime = self.transactionTime,\
+            msisdn = self.msisdn,\
+            ussdServiceCode = self.msisdn,\
+            ussdRequestString = '6',\
+            response = True\
+        )
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Capacity:\n1. Notifier\n2. Registrar&action=request")
+
 
     def testModifyPin(self):
         logger.info("\n\nTesting User management modify Pin\n\n")
