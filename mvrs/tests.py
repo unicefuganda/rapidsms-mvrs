@@ -79,7 +79,7 @@ class ViewTest(TestCase):
                                     transactionTime = self.transactionTime, \
                                     msisdn = self.msisdn, \
                                     ussdServiceCode = self.msisdn, \
-                                    ussdRequestString = 'my first guy', \
+                                    ussdRequestString = 'first', \
                                     response = True\
                                     )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's Surname:&action=request")
@@ -87,7 +87,7 @@ class ViewTest(TestCase):
                                     transactionTime = self.transactionTime, \
                                     msisdn = self.msisdn, \
                                     ussdServiceCode = self.msisdn, \
-                                    ussdRequestString = 'the other name', \
+                                    ussdRequestString = 'other', \
                                     response = True\
                                     )
         self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter date of birth:\n1. Today\n2. Yesterday\nOther (Enter manually in the format ddmmyyyy) &action=request')
@@ -111,7 +111,7 @@ class ViewTest(TestCase):
                                     transactionTime = self.transactionTime, \
                                     msisdn = self.msisdn, \
                                     ussdServiceCode = self.msisdn, \
-                                    ussdRequestString = 'the mother', \
+                                    ussdRequestString = 'name mother', \
                                     response = True\
                                     )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Select mother's nationality:\n1. Uganda\n2. Kenya\n3. Tanzania\n4. Rwanda\n5. Burundi\n6. South Sudan\n7. DR Congo\nOthers (Type in the country manually)&action=request")
@@ -165,7 +165,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString = 'my first guy',\
+            ussdRequestString = 'first',\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's Surname:&action=request")
@@ -173,7 +173,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString = 'the other name',\
+            ussdRequestString = 'other',\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter date of birth:\n1. Today\n2. Yesterday\nOther (Enter manually in the format ddmmyyyy) &action=request')
@@ -205,7 +205,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString = '1',\
+            ussdRequestString = 'Patricia Something',\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Enter father's Name and Surname\nor\nEnter '0' if not available:&action=request")
@@ -251,7 +251,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString = 'my first guy',\
+            ussdRequestString = 'first',\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Enter child's Surname:&action=request")
@@ -259,7 +259,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString = '',\
+            ussdRequestString = 'Chld',\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), 'responseString=1. Notify Birth\n2. Notify Death\n3. Edit Record\n4. Validation\n5. User Management\n6. Resume Previous&action=request')
@@ -290,7 +290,7 @@ class ViewTest(TestCase):
                                     ussdRequestString = '2', \
                                     response = True\
                                     )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter names of the Deceased:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Name and Surname of Deceased:&action=request")
         response = self.sendRequest(transactionId = '123345',\
                                     transactionTime = self.transactionTime, \
                                     msisdn = self.msisdn, \
@@ -322,7 +322,7 @@ class ViewTest(TestCase):
                                     ussdRequestString = '12072012', \
                                     response = True\
                                     )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Names of Declarant:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Name and Surname of Declarant:&action=request")
         response = self.sendRequest(transactionId = '123345',\
                                     transactionTime = self.transactionTime, \
                                     msisdn = self.msisdn, \
@@ -374,7 +374,7 @@ class ViewTest(TestCase):
                                     ussdRequestString = '2', \
                                     response = True\
                                     )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter names of the Deceased:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Name and Surname of Deceased:&action=request")
         response = self.sendRequest(transactionId = '123346',\
                                     transactionTime = self.transactionTime, \
                                     msisdn = self.msisdn, \
@@ -418,12 +418,12 @@ class ViewTest(TestCase):
             ussdRequestString = '2',\
             response = True\
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=Enter names of the Deceased:&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=Name and Surname of Deceased:&action=request")
         response = self.sendRequest(transactionId = '123346',\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString = 'Mr. Dead',\
+            ussdRequestString = 'Yon Dead',\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Age of the deceased:&action=request")
@@ -466,12 +466,12 @@ class ViewTest(TestCase):
             ussdRequestString = '12122011',\
             response = True\
         )
-        self.assertEqual(urllib2.unquote(response.content), "responseString=Names of Declarant:&action=request")
+        self.assertEqual(urllib2.unquote(response.content), "responseString=Name and Surname of Declarant:&action=request")
         response = self.sendRequest(transactionId = '123347',\
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString = 'Kenneth',\
+            ussdRequestString = 'Osama Bin Laden',\
             response = True\
         )
         self.assertEqual(urllib2.unquote(response.content), "responseString=Declarant's Phone Number:&action=request")
@@ -526,7 +526,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString ="user register",\
+            ussdRequestString ="user",\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Enter User's surname:&action=request")
@@ -534,7 +534,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString = 'Other names',\
+            ussdRequestString = 'Other',\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Enter User's sex:\n1. Male\n2. Female&action=request")
@@ -613,7 +613,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString ="user register",\
+            ussdRequestString ="User",\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Enter User's surname:&action=request")
@@ -621,7 +621,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString = 'Other names',\
+            ussdRequestString = 'Other',\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Enter User's sex:\n1. Male\n2. Female&action=request")
@@ -1282,7 +1282,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString = 'Mama',\
+            ussdRequestString = 'Mama Fina',\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Change Mother\'s Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
@@ -1406,7 +1406,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString = 'Mama',\
+            ussdRequestString = 'Mama Fina',\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Change father\'s Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
@@ -1530,7 +1530,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString = 'Mama',\
+            ussdRequestString = 'Mama Fina',\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Change deceased\'s Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")
@@ -1781,7 +1781,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,\
             msisdn = self.msisdn,\
             ussdServiceCode = self.msisdn,\
-            ussdRequestString = '1',\
+            ussdRequestString = 'dskd huty',\
             response = True\
         )
         self.assertEquals(urllib2.unquote(response.content), "responseString=Change declarant\'s Name and Surname\n\nEnter  PIN to confirm or \"0\" to cancel&action=request")

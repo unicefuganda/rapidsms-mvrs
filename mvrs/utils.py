@@ -1,12 +1,6 @@
-'''
-Created on Jul 12, 2012
-
-@author: asseym
-'''
-from django.core.exceptions import ValidationError
-import re
 from django.conf import settings
-from rapidsms_xforms.models import XFormField
+
+class MissingDictionaryException(Exception):pass
 
 def dictinvert(dict):
     inv = {}
@@ -60,34 +54,14 @@ def get_summary(session):
             summary += "%s %s " % (val, nav.response)
     return summary
 
-
 def get_dictionary_for_session(session):
-    def _all_match(session, positions):
+    def _all_match(dict):
+        positions = dict['positions']
         for position in range(len(positions)):
             if not session.navigations.order_by('date')[position].response== str(positions[position]):
                 return False
         return True
     for dict in [getattr(settings,d) for d in dir(settings) if d.startswith('UTL_')]:
-        if _all_match(session,dict['positions']):
+        if _all_match(dict):
             return dict
-    raise Exception('Dictionary for this session cannot be found in session %s' %session.id)
-
-def _parse_pin(command,value): return value
-
-def _parse_name(command,value):
-    names,name_list = value.split(" "),[]
-    if value.trim() == "0":
-        return value
-    if len(names) == 2:
-        for name in names:
-            name = name.trim().lower().capitalize()
-            if not re.match(r'^([a-zA-Z]+)$',name):
-                raise ValidationError('Both names should be valid names')
-            name_list.append(name)
-        return " ".join(name_list)
-    raise ValidationError('Two names are required')
-
-def register_custom_field_types():
-    XFormField.register_field_type('pin', 'Pin', _parse_pin,xforms_type='string', db_type=XFormField.TYPE_INT)
-    XFormField.register_field_type('name_val', 'Name',_parse_name)
-
+    raise MissingDictionaryException('Dictionary for this session cannot be found in your settings %s' %session.id)
