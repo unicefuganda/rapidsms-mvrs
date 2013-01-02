@@ -64,17 +64,6 @@
         "model" : "ussd.screen",
         "pk" : "child_sex"
     },
-    { "fields" : { "label" : "Date of Birth",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 0,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 9
-    },
-        "model" : "ussd.screen",
-        "pk" : "birth_date"
-    },
     { "fields" : { "label" : "",
         "level" : 0,
         "lft" : 1,
@@ -118,17 +107,6 @@
     },
         "model" : "ussd.screen",
         "pk" : "death_reporter_phone"
-    },
-    { "fields" : { "label" : "Deceased Date",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 0,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 16
-    },
-        "model" : "ussd.screen",
-        "pk" : "death_date"
     },
     { "fields" : { "label" : "Deceased Sex",
         "level" : 0,
@@ -195,17 +173,6 @@
     },
         "model" : "ussd.screen",
         "pk" : "user_phone"
-    },
-    { "fields" : { "label" : "Birth Date",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 0,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 23
-    },
-        "model" : "ussd.screen",
-        "pk" : "user_birth_date"
     },
     { "fields" : { "label" : "Gender",
         "level" : 0,
@@ -438,17 +405,6 @@
         "model" : "ussd.screen",
         "pk" : "new_name_pin_mother"
     },
-    { "fields" : { "label" : "New dod",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 61
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_dod"
-    },
     { "fields" : { "label" : "New Name Pin",
         "level" : 0,
         "lft" : 1,
@@ -591,17 +547,6 @@
     },
         "model" : "ussd.screen",
         "pk" : "new_date_pin"
-    },
-    { "fields" : { "label" : "New name",
-        "level" : 0,
-        "lft" : 1,
-        "order" : 1,
-        "parent" : null,
-        "rght" : 2,
-        "tree_id" : 43
-    },
-        "model" : "ussd.screen",
-        "pk" : "new_dob"
     },
     { "fields" : { "label" : "Names of Declarant",
         "level" : 4,
@@ -1054,6 +999,61 @@
         "model" : "ussd.screen",
         "pk" : "user_first_name"
     },
+    { "fields" : { "label" : "Deceased Date",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 0,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 16
+    },
+        "model" : "ussd.screen",
+        "pk" : "death_date"
+    },
+    { "fields" : { "label" : "Birth Date",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 0,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 23
+    },
+        "model" : "ussd.screen",
+        "pk" : "user_birth_date"
+    },
+    { "fields" : { "label" : "New dod",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 61
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_dod"
+    },
+    { "fields" : { "label" : "Date of Birth",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 0,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 9
+    },
+        "model" : "ussd.screen",
+        "pk" : "birth_date"
+    },
+    { "fields" : { "label" : "New name",
+        "level" : 0,
+        "lft" : 1,
+        "order" : 1,
+        "parent" : null,
+        "rght" : 2,
+        "tree_id" : 43
+    },
+        "model" : "ussd.screen",
+        "pk" : "new_dob"
+    },
     { "fields" : { "label" : "Declarant's Capacity",
         "level" : 4,
         "lft" : 43,
@@ -1183,12 +1183,6 @@
         "model" : "ussd.question",
         "pk" : "child_sex"
     },
-    { "fields" : { "next" : "child_sex",
-        "question_text" : "Enter date of birth:\n1. Today\n2. Yesterday\nOther (Enter manually in the format ddmmyyyy) "
-    },
-        "model" : "ussd.question",
-        "pk" : "birth_date"
-    },
     { "fields" : { "next" : "death_thank_you",
         "question_text" : "Enter Pin to confirm or \"0\" to cancel"
     },
@@ -1206,12 +1200,6 @@
     },
         "model" : "ussd.question",
         "pk" : "death_reporter_phone"
-    },
-    { "fields" : { "next" : "death_reporter",
-        "question_text" : "Date of death (ddmmyyyy):"
-    },
-        "model" : "ussd.question",
-        "pk" : "death_date"
     },
     { "fields" : { "next" : "death_date",
         "question_text" : "Sex of the deceased:1. Male 2. Female"
@@ -1248,12 +1236,6 @@
     },
         "model" : "ussd.question",
         "pk" : "user_phone"
-    },
-    { "fields" : { "next" : "user_phone",
-        "question_text" : "Enter User's Date of Birth (ddmmyyyy):"
-    },
-        "model" : "ussd.question",
-        "pk" : "user_birth_date"
     },
     { "fields" : { "next" : "user_birth_date",
         "question_text" : "Enter User's sex:\n1. Male\n2. Female"
@@ -1375,12 +1357,6 @@
         "model" : "ussd.question",
         "pk" : "new_name_pin_mother"
     },
-    { "fields" : { "next" : "new_dod_pin",
-        "question_text" : "Date of death (ddmmyyyy):"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_dod"
-    },
     { "fields" : { "next" : null,
         "question_text" : "Thank you for updating this record. You will  receive a new confirmation message with a summary of the updated  record."
     },
@@ -1452,12 +1428,6 @@
     },
         "model" : "ussd.question",
         "pk" : "new_date_pin"
-    },
-    { "fields" : { "next" : "new_date_pin",
-        "question_text" : "Enter date of birth:\n1. Today\n2. Yesterday\nOther (Enter manually in the format ddmmyyyy)"
-    },
-        "model" : "ussd.question",
-        "pk" : "new_dob"
     },
     { "fields" : { "next" : "new_name_declarant",
         "question_text" : "Enter reference number:"
@@ -1645,6 +1615,36 @@
         "model" : "ussd.question",
         "pk" : "user_first_name"
     },
+    { "fields" : { "next" : "death_reporter",
+        "question_text" : "Date of death (ddmmyyyy):"
+    },
+        "model" : "ussd.question",
+        "pk" : "death_date"
+    },
+    { "fields" : { "next" : "user_phone",
+        "question_text" : "Enter User's Date of Birth (ddmmyyyy):"
+    },
+        "model" : "ussd.question",
+        "pk" : "user_birth_date"
+    },
+    { "fields" : { "next" : "new_dod_pin",
+        "question_text" : "Date of death (ddmmyyyy):"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_dod"
+    },
+    { "fields" : { "next" : "child_sex",
+        "question_text" : "Enter date of birth:\n1. Today\n2. Yesterday\nOther (Enter manually in the format ddmmyyyy) "
+    },
+        "model" : "ussd.question",
+        "pk" : "birth_date"
+    },
+    { "fields" : { "next" : "new_date_pin",
+        "question_text" : "Enter date of birth:\n1. Today\n2. Yesterday\nOther (Enter manually in the format ddmmyyyy)"
+    },
+        "model" : "ussd.question",
+        "pk" : "new_dob"
+    },
     { "fields" : { "next" : "new_capacity",
         "question_text" : "Enter reference number:"
     },
@@ -1695,10 +1695,6 @@
         "model" : "ussd.field",
         "pk" : "child_sex"
     },
-    { "fields" : { "field" : 11 },
-        "model" : "ussd.field",
-        "pk" : "birth_date"
-    },
     { "fields" : { "field" : 13 },
         "model" : "ussd.field",
         "pk" : "death_summary"
@@ -1710,10 +1706,6 @@
     { "fields" : { "field" : 15 },
         "model" : "ussd.field",
         "pk" : "death_reporter_phone"
-    },
-    { "fields" : { "field" : 17 },
-        "model" : "ussd.field",
-        "pk" : "death_date"
     },
     { "fields" : { "field" : 18 },
         "model" : "ussd.field",
@@ -1738,10 +1730,6 @@
     { "fields" : { "field" : 26 },
         "model" : "ussd.field",
         "pk" : "user_phone"
-    },
-    { "fields" : { "field" : 27 },
-        "model" : "ussd.field",
-        "pk" : "user_birth_date"
     },
     { "fields" : { "field" : 28 },
         "model" : "ussd.field",
@@ -1823,10 +1811,6 @@
         "model" : "ussd.field",
         "pk" : "new_name_pin_mother"
     },
-    { "fields" : { "field" : 71 },
-        "model" : "ussd.field",
-        "pk" : "new_dod"
-    },
     { "fields" : { "field" : 46 },
         "model" : "ussd.field",
         "pk" : "new_name_thank"
@@ -1874,10 +1858,6 @@
     { "fields" : { "field" : 52 },
         "model" : "ussd.field",
         "pk" : "new_date_pin"
-    },
-    { "fields" : { "field" : 53 },
-        "model" : "ussd.field",
-        "pk" : "new_dob"
     },
     { "fields" : { "field" : 49 },
         "model" : "ussd.field",
@@ -2002,6 +1982,26 @@
     { "fields" : { "field" : 81 },
         "model" : "ussd.field",
         "pk" : "user_first_name"
+    },
+    { "fields" : { "field" : 82 },
+        "model" : "ussd.field",
+        "pk" : "death_date"
+    },
+    { "fields" : { "field" : 82 },
+        "model" : "ussd.field",
+        "pk" : "user_birth_date"
+    },
+    { "fields" : { "field" : 82 },
+        "model" : "ussd.field",
+        "pk" : "new_dod"
+    },
+    { "fields" : { "field" : 85 },
+        "model" : "ussd.field",
+        "pk" : "birth_date"
+    },
+    { "fields" : { "field" : 85 },
+        "model" : "ussd.field",
+        "pk" : "new_dob"
     },
     { "fields" : { "field" : 49 },
         "model" : "ussd.field",
@@ -2779,6 +2779,15 @@
         "model" : "rapidsms_xforms.xformfield",
         "pk" : 84
     },
+    { "fields" : { "command" : "dtc",
+        "field_type" : "date_c",
+        "order" : 3,
+        "question" : null,
+        "xform" : 1
+    },
+        "model" : "rapidsms_xforms.xformfield",
+        "pk" : 85
+    },
     { "fields" : { "field" : 78,
         "message" : "No pin entered",
         "order" : 1,
@@ -2924,6 +2933,20 @@
     },
         "model" : "eav.attribute",
         "pk" : 10
+    },
+    { "fields" : { "created" : "2013-01-02 02:00:31",
+        "datatype" : "text",
+        "description" : null,
+        "enum_group" : null,
+        "modified" : "2013-01-02 02:00:31",
+        "name" : "date_cval",
+        "required" : false,
+        "site" : 1,
+        "slug" : "test_dtc",
+        "type" : null
+    },
+        "model" : "eav.attribute",
+        "pk" : 85
     },
     { "fields" : { "created" : "2012-12-28 01:39:52",
         "datatype" : "text",
