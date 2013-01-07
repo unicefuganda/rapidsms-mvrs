@@ -18,10 +18,17 @@ def _parse_name(command,value):
     raise ValidationError('At least two names are required, (%d) given'%len(names))
 
 def _parse_name_single(command,value):
-    name = value.strip().lower().capitalize()
-    if name =="0":return name
-    if not re.match(r'^([a-zA-Z]+)$',name) or len(name)<2:raise ValidationError('The name looks invalid or too short (Should be 1 name)')
-    return value
+#    name = value.strip().lower().capitalize()
+#    if name =="0":return name
+#    if not re.match(r'^([a-zA-Z]+)$',name) or len(name)<2:raise ValidationError('The name looks invalid or too short (Should be 1 name)')
+#    return value
+    names,name_list = value.split(" "),[]
+    if value.strip() == "0":return value
+    for name in names:
+        name = name.strip().lower().capitalize()
+        if not re.match(r"^([a-zA-Z'\-]+)$",name) or len(name) < 2:raise ValidationError('All names should be valid names')
+        name_list.append(name)
+    return " ".join(name_list)
 
 
 def _parse_date(command,value):

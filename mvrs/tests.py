@@ -168,7 +168,7 @@ class ViewTest(TestCase):
             ussdRequestString = 'first1',
             response = True
         )
-        self.assertEquals(urllib2.unquote(response.content), "responseString=The name looks invalid or too short (Should be 1 name)\nEnter child's Name\nor\nEnter '0' if not available :&action=request")
+        self.assertEquals(urllib2.unquote(response.content), "responseString=All names should be valid names\nEnter child's Name\nor\nEnter '0' if not available :&action=request")
         response = self.sendRequest(transactionId = self.transactionId,
             transactionTime = self.transactionTime,
             msisdn = self.msisdn,
@@ -181,7 +181,7 @@ class ViewTest(TestCase):
             transactionTime = self.transactionTime,
             msisdn = self.msisdn,
             ussdServiceCode = self.msisdn,
-            ussdRequestString = 'other',
+            ussdRequestString = 'other\' J-ohn',
             response = True
         )
         self.assertEquals(urllib2.unquote(response.content), 'responseString=Enter date of birth:\n1. Today\n2. Yesterday\nOther (Enter manually in the format ddmmyyyy) &action=request')
