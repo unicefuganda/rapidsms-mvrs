@@ -26,7 +26,9 @@ def _parse_name_single(command,value):
 
 def _parse_date(command,value):
     if not re.match(r'^([0-9]{8})$',value): raise ValidationError('Invalid date. Date should look like - 02091990')
-    try:datetime(int(value[4:8]),int(value[2:4]),int(value[0:2]))
+    try:
+        date_value = datetime(int(value[4:8]),int(value[2:4]),int(value[0:2]))
+        if date_value > datetime.today(): raise ValidationError("Invalid date, Date looks like a future date")
     except ValueError, e:raise ValidationError(str(e))
     return value
 
