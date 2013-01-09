@@ -20,11 +20,13 @@ def get_summary_dict(session, ussd_menu_dict):
     pin = None
     keys=dictinvert(ussd_menu_dict)
     for nav in session.navigations.all():
-        if nav.screen.downcast().slug in settings.PIN_SLUGS:
-            pin = nav.response
+        slug = nav.screen.downcast().slug
+        response = nav.response
+        if slug in settings.PIN_SLUGS:
+            pin = response
         else:
-            if keys.has_key(nav.screen.downcast().slug):
-                results[keys.get(nav.screen.downcast().slug)] = nav.response
+            if keys.has_key(slug) and not results.has_key(keys.get(slug)):results[keys.get(slug)] = response
+            else: logger.info("misplaced dictionary values-:%s-:%s"%(slug,response))
     results['SESSION'] = session.transaction_id
     results['MSISDN'] = session.connection.identity
     results['PIN'] = pin
