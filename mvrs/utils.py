@@ -1,4 +1,8 @@
+import json
+import logging
 from django.conf import settings
+
+logger = logging.getLogger(__name__)
 
 class MissingDictionaryException(Exception):pass
 
@@ -25,6 +29,7 @@ def get_summary_dict(session, ussd_menu_dict):
     results['MSISDN'] = session.connection.identity
     results['PIN'] = pin
     results['ACTION'] = action
+    logger.info("results dictionary: %s"%json.dumps(results))
     return results
 
 def get_session_data_turples(session, ussd_menu_dict, action):
