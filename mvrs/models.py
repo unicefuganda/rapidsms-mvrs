@@ -1,3 +1,4 @@
+from django.db import models
 from ussd.models import ussd_pre_transition
 
 
@@ -14,3 +15,8 @@ def handle_skips(sender, **kwargs):
         #b_summary.save()
         pass
 ussd_pre_transition.connect(handle_skips, weak=False)
+
+
+class Hit(models.Model):
+    created_on = models.DateTimeField(auto_now_add=True)
+

@@ -6,6 +6,7 @@ import urllib
 from ussd.models import *
 from django.conf import settings
 from mvrs.validator import register_custom_field_types
+from models import Hit
 from tasks import forward_to_utl
 from django.core.cache import cache
 import logging
@@ -13,6 +14,9 @@ import logging
 logger = logging.getLogger(__name__)
 
 def ussd_menu(req, input_form=YoForm, output_template='ussd/yo.txt'):
+    hit = Hit()
+    hit.save()
+    logger.info('Created a hit at: %s' % hit.created_on)
     register_custom_field_types()
     form = input_form(req.REQUEST)
     if form and form.is_valid():
